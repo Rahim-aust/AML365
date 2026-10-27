@@ -228,7 +228,7 @@ function Modules() {
     <>
       <section id="modules" className="section-pad scroll-mt-24 bg-skysoft-50">
         <div className="site-container">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <SectionHeading
               eyebrow="AML modules"
               title="Purpose-built controls for financial crime operations"
@@ -236,9 +236,20 @@ function Modules() {
             />
             <Link
               to="/solutions"
-              className="focus-ring inline-flex items-center gap-2 self-start font-bold text-brand-700"
+              aria-label="View the complete AML365 module portfolio"
+              className="focus-ring group flex min-h-16 w-full items-center justify-between gap-5 rounded-2xl bg-navy-950 px-5 py-4 text-white shadow-lg shadow-blue-950/10 transition hover:bg-brand-700 sm:w-auto sm:min-w-72 lg:mb-1"
             >
-              View all modules <ArrowRight size={17} />
+              <span>
+                <span className="meta-label block text-blue-200">
+                  Complete solution portfolio
+                </span>
+                <span className="mt-1 block font-semibold">
+                  View all AML modules
+                </span>
+              </span>
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 transition group-hover:translate-x-0.5 group-hover:bg-white/15">
+                <ArrowRight size={18} aria-hidden="true" />
+              </span>
             </Link>
           </div>
           <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -322,7 +333,7 @@ function Capability({ item, reverse }) {
             </div>
             <img
               src={item.image}
-              alt={`${item.eyebrow} interface from the AML365 presentation`}
+              alt={`${item.eyebrow} interface in AML365`}
               className="min-h-64 w-full rounded-xl bg-slate-50 object-contain"
               loading="lazy"
             />
@@ -344,7 +355,7 @@ function Roadmap() {
           <SectionHeading
             eyebrow="AI and machine learning"
             title="Planned capabilities on the product roadmap"
-            copy="The source presentation identifies these items as plans. They are shown separately from current AML365 functionality and should not be interpreted as generally available features."
+            copy="These capabilities are planned roadmap items and are not currently presented as generally available AML365 features."
             light
           />
           <span className="meta-label inline-flex self-start rounded-full border border-blue-300/30 bg-blue-400/10 px-4 py-2 text-blue-200">
@@ -378,7 +389,7 @@ function Dashboards() {
         <SectionHeading
           eyebrow="Dashboards and reporting"
           title="Operational visibility for compliance teams"
-          copy="The presentation shows dashboard views for alert status, aging, customer review, profiling and relationship analysis. Export formats include Excel, PDF and JPEG."
+          copy="Dashboard views support alert status, aging, customer review, profiling and relationship analysis. Export formats include Excel, PDF and JPEG."
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-[1.35fr_.65fr]">
           <figure className="rounded-3xl border border-slate-200 bg-skysoft-50 p-5">
@@ -389,7 +400,7 @@ function Dashboards() {
               loading="lazy"
             />
             <figcaption className="mt-4 text-sm font-semibold text-slate-500">
-              Relationship analysis view shown in the source presentation
+              Relationship analysis
             </figcaption>
           </figure>
           <div className="grid gap-5">
@@ -465,7 +476,7 @@ function Implementation() {
         <SectionHeading
           eyebrow="Implementation"
           title="A controlled path from scope to production"
-          copy="The delivery lifecycle in the source presentation covers requirements, architecture, data mapping, configuration, testing, training, deployment and production support."
+          copy="The delivery lifecycle covers requirements, architecture, data mapping, configuration, testing, training, deployment and production support."
         />
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {steps.map(([number, title, copy]) => (
@@ -494,17 +505,13 @@ function Clients() {
       id="clients"
       className="scroll-mt-24 overflow-hidden border-b border-slate-200 bg-white py-10 sm:py-12"
     >
-      <div className="site-container flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div className="site-container">
         <div>
           <p className="eyebrow">Selected banking clients</p>
           <h2 className="mt-3 text-2xl font-semibold leading-tight text-navy-950 sm:text-3xl">
             AML experience across Bangladesh’s financial sector
           </h2>
         </div>
-        <p className="max-w-md text-sm leading-6 text-slate-500">
-          These institutions are identified in the supplied AML365 presentation.
-          Logos are reproduced from that source material.
-        </p>
       </div>
       <div className="marquee mt-8 overflow-hidden border-y border-slate-200 bg-slate-50/60 py-4">
         <div

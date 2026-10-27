@@ -13,9 +13,10 @@ export function SolutionsPage() {
             AML controls connected through one operating environment
           </h1>
           <p className="lead-copy mt-5 max-w-3xl text-blue-100/75">
-            Review the capabilities documented in the AML365 source
-            presentation. Individual deployment scope and configuration depend
-            on the institution’s requirements.
+            Explore AML365 capabilities across screening, customer risk,
+            monitoring, investigation and regulatory reporting. Deployment
+            scope and configuration are aligned to each institution’s
+            requirements.
           </p>
         </div>
       </section>
@@ -24,7 +25,7 @@ export function SolutionsPage() {
           <SectionHeading
             eyebrow="Current capabilities"
             title="AML365 modules"
-            copy="The modules below represent current product capabilities shown in the supplied presentation. Planned AI and machine-learning items remain separately identified on the main page."
+            copy="Explore the current AML365 product modules. Planned AI and machine-learning capabilities are identified separately on the main page."
           />
           <div className="mt-14 space-y-5">
             {modules.map((module, index) => {
