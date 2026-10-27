@@ -16,13 +16,13 @@ const capabilities = [
 export function HomePage() {
   return <>
     <Hero />
+    <Clients />
     <Overview />
     <Modules />
     {capabilities.map((item, index) => <Capability key={item.id} item={item} reverse={index % 2 === 1} />)}
     <Roadmap />
     <Dashboards />
     <Implementation />
-    <Clients />
     <Contact />
   </>;
 }
@@ -83,7 +83,7 @@ function Implementation() {
 }
 
 function Clients() {
-  return <section id="clients" className="section-pad scroll-mt-24 overflow-hidden bg-white"><div className="site-container"><SectionHeading eyebrow="Selected clients" title="Experience across Bangladesh’s financial sector" copy="The institutions below appear in the supplied AML presentation. Logos are reproduced from that source material." /></div><div className="marquee mt-14 overflow-hidden border-y border-slate-200 bg-white py-6"><div className="marquee-track flex w-max items-center" aria-label="Selected AML365 clients">{[...clients, ...clients].map(([name, src], index) => <div key={`${name}-${index}`} className="mx-3 grid h-24 w-52 shrink-0 place-items-center rounded-xl border border-slate-200 bg-white p-5"><img src={src} alt={`${name} logo`} className="max-h-14 max-w-40 object-contain" loading="lazy" /></div>)}</div></div></section>;
+  return <section id="clients" className="scroll-mt-24 overflow-hidden border-b border-slate-200 bg-white py-10 sm:py-12"><div className="site-container flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"><div><p className="eyebrow">Selected banking clients</p><h2 className="mt-3 text-2xl font-semibold tracking-tight text-navy-950 sm:text-3xl">AML experience across Bangladesh’s financial sector</h2></div><p className="max-w-md text-sm leading-6 text-slate-500">These institutions are identified in the supplied AML365 presentation. Logos are reproduced from that source material.</p></div><div className="marquee mt-8 overflow-hidden border-y border-slate-200 bg-slate-50/60 py-4"><div className="marquee-track flex w-max items-center" aria-label="Selected AML365 clients">{[...clients, ...clients].map(([name, src], index) => <div key={`${name}-${index}`} className="mx-2 grid h-20 w-44 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white px-5 py-3"><img src={src} alt={`${name} logo`} className="max-h-12 max-w-36 object-contain" loading={index < clients.length ? 'eager' : 'lazy'} /></div>)}</div></div></section>;
 }
 
 function Contact() {
