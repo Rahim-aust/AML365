@@ -31,7 +31,7 @@ function Hero() {
   const cards = [['Customer risk', 'Risk models and review', Gauge], ['Screening', 'Lists and matching', LockKeyhole], ['Monitoring', 'Rules and detection', CircleDot], ['Cases', 'Investigation workflow', FileText]];
   return <section className="blueprint-grid relative overflow-hidden bg-navy-950 pt-20 text-white">
     <div className="absolute inset-x-0 top-0 h-[30rem] bg-[radial-gradient(circle_at_72%_35%,rgba(40,120,237,.32),transparent_38%)]" />
-    <div className="site-container relative grid min-h-[620px] max-w-6xl items-center gap-10 py-14 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:py-16">
+    <div className="site-container relative grid min-h-[620px] items-center gap-10 py-14 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:py-16">
       <div className="fade-up">
         <p className="eyebrow !text-blue-300">AML365 by DataSoft</p>
         <h1 className="mt-6 max-w-3xl text-[2.8rem] font-semibold leading-[1.02] tracking-[-.045em] sm:text-5xl lg:text-[3.75rem]">Connected financial crime compliance for modern banking</h1>

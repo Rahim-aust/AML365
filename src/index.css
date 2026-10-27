@@ -17,7 +17,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; background: #fff; color: #0a1d3b; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 button, a, input, textarea, select { outline-offset: 3px; }
 ::selection { background: #bfdbfe; color: #06142b; }
-.site-container { width: min(100% - 2rem, 76rem); margin-inline: auto; }
+.site-container { width: min(100% - 2rem, 88rem); margin-inline: auto; }
 .section-pad { padding-block: clamp(5rem, 9vw, 8rem); }
 .display-title { font-size: clamp(3.25rem, 7.2vw, 6.7rem); line-height: .94; letter-spacing: -.065em; }
 .section-title { font-size: clamp(2.35rem, 4.8vw, 4.35rem); line-height: 1.02; letter-spacing: -.055em; }
