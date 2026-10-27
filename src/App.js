@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { SiteLayout } from './components/SiteLayout';
-import { ContactPage } from './pages/ContactPage';
-import { HomePage } from './pages/Home';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { SolutionsPage } from './pages/SolutionsPage';
+import { SiteLayout } from './components/SiteLayout.js';
+import { ContactPage } from './pages/ContactPage.js';
+import { HomePage } from './pages/Home.js';
+import { NotFoundPage } from './pages/NotFoundPage.js';
+import { SolutionsPage } from './pages/SolutionsPage.js';
 
 function RouteEffects() {
   const location = useLocation();
   useEffect(() => {
-    const titles: Record<string, string> = {
+    const titles = {
       '/': 'AML365 | Financial Crime Compliance Software',
       '/solutions': 'AML365 Solutions | Screening, KYC and Transaction Monitoring',
       '/contact': 'Contact the AML365 Team | DataSoft',
@@ -21,6 +21,6 @@ function RouteEffects() {
   return null;
 }
 
-export default function App() {
+export default function AppRoot() {
   return <SiteLayout><RouteEffects /><Routes><Route path="/" element={<HomePage />} /><Route path="/solutions" element={<SolutionsPage />} /><Route path="/contact" element={<ContactPage />} /><Route path="*" element={<NotFoundPage />} /></Routes></SiteLayout>;
 }

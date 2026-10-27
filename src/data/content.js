@@ -1,9 +1,6 @@
-import type { LucideIcon } from 'lucide-react';
 import { BadgeCheck, Banknote, BellRing, Binoculars, FileCheck2, FileSearch, Landmark, Network, Radar, SearchCheck, ShieldCheck, Waypoints } from 'lucide-react';
 
-export type Module = { slug: string; name: string; summary: string; details: string; features: string[]; icon: LucideIcon };
-
-export const modules: Module[] = [
+export const modules = [
   { slug: 'sanctions-screening', name: 'Sanctions and watchlist screening', summary: 'Customer, transaction, SWIFT and remittance screening across global and internal lists.', details: 'AML365 supports on-demand and batch screening, list-change rescreening, configurable matching scores, whitelisting and role-based alert workflows.', features: ['OFAC, UN, UK, EU and other supported lists', 'Central bank and internal watchlists', 'Web-service integration with source systems'], icon: SearchCheck },
   { slug: 'kyc-risk', name: 'KYC, transaction profile and risk', summary: 'Customer risk scoring and periodic review aligned with the institution’s configured policy.', details: 'Teams can configure model fields, capture or import transaction profiles, identify incomplete KYC, review high-risk accounts and manage periodic review schedules.', features: ['Configurable customer risk model', 'Periodic KYC and transaction-profile review', 'Manual risk override with controlled access'], icon: BadgeCheck },
   { slug: 'transaction-monitoring', name: 'Transaction monitoring', summary: 'Rule-based detection, alert generation and investigation workflows.', details: 'The monitoring engine applies configurable scenarios and thresholds, links alerts with customer and transaction details, and connects investigation to STR/SAR filing and case management.', features: ['Configurable rules and violation settings', 'Alert evidence, notes and document history', 'Customer and transaction review'], icon: Radar },
@@ -24,4 +21,4 @@ export const roadmap = [
 
 export const clients = [
   ['UCB', '/clients/ucb.png'], ['Sonali Bank', '/clients/sonali-bank.png'], ['Agrani Bank', '/clients/agrani-bank.png'], ['Rupali Bank', '/clients/rupali-bank.png'], ['Prime Bank', '/clients/prime-bank.jpeg'], ['AB Bank', '/clients/ab-bank.jpeg'], ['Eastern Bank', '/clients/eastern-bank.png'], ['IFIC Bank', '/clients/ific-bank.jpeg'], ['Jamuna Bank', '/clients/jamuna-bank.jpeg'], ['Trust Bank', '/clients/trust-bank.png'], ['Mutual Trust Bank', '/clients/mutual-trust-bank.jpeg'], ['Social Islami Bank', '/clients/social-islami-bank.png'], ['Mercantile Bank', '/clients/mercantile-bank.jpeg'], ['Union Bank', '/clients/union-bank.png'],
-] as const;
+];

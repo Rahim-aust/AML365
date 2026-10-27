@@ -1,8 +1,8 @@
 import { ArrowRight, Check, ChevronRight, CircleDot, Database, FileText, Gauge, Layers3, LockKeyhole, Settings2, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ContactForm } from '../components/ContactForm';
-import { SectionHeading } from '../components/SectionHeading';
-import { clients, modules, roadmap } from '../data/content';
+import { ContactForm } from '../components/ContactForm.js';
+import { SectionHeading } from '../components/SectionHeading.js';
+import { clients, modules, roadmap } from '../data/content.js';
 
 const capabilities = [
   { id: 'sanctions', eyebrow: 'Sanctions screening', title: 'Screen names and transactions across multiple list sources', copy: 'AML365 supports customer, SWIFT, remittance and transaction screening with list updates, configurable matching, rescreening and role-based alert review.', points: ['On-demand and batch screening', 'Fuzzy and phonetic matching', 'Whitelist and score configuration'], image: '/product/screening-interface.png' },
@@ -26,7 +26,7 @@ export function HomePage() {
 }
 
 function Hero() {
-  const cards = [['Customer risk', 'Risk models and review', Gauge], ['Screening', 'Lists and matching', LockKeyhole], ['Monitoring', 'Rules and detection', CircleDot], ['Cases', 'Investigation workflow', FileText]] as const;
+  const cards = [['Customer risk', 'Risk models and review', Gauge], ['Screening', 'Lists and matching', LockKeyhole], ['Monitoring', 'Rules and detection', CircleDot], ['Cases', 'Investigation workflow', FileText]];
   return <section className="blueprint-grid relative overflow-hidden bg-navy-950 pt-20 text-white">
     <div className="absolute inset-x-0 top-0 h-[30rem] bg-[radial-gradient(circle_at_72%_35%,rgba(40,120,237,.32),transparent_38%)]" />
     <div className="site-container relative grid min-h-[760px] items-center gap-14 py-20 lg:grid-cols-[1.08fr_.92fr] lg:py-28">
@@ -49,7 +49,7 @@ function Hero() {
 }
 
 function Overview() {
-  const blocks = [['Data', 'Multiple banking and external sources', Database], ['Controls', 'Rules, matching, scoring and workflow', Settings2], ['Outcomes', 'Alerts, cases, reports and audit history', Layers3]] as const;
+  const blocks = [['Data', 'Multiple banking and external sources', Database], ['Controls', 'Rules, matching, scoring and workflow', Settings2], ['Outcomes', 'Alerts, cases, reports and audit history', Layers3]];
   return <section id="overview" className="section-pad scroll-mt-24 bg-white"><div className="site-container grid gap-14 lg:grid-cols-[.8fr_1.2fr]"><SectionHeading eyebrow="Product overview" title="One operating environment across the AML lifecycle" /><div><p className="text-2xl font-semibold leading-9 tracking-tight text-navy-900">AML365 brings separate compliance activities into a consistent workflow while preserving the controls and responsibilities each function requires.</p><p className="mt-6 text-lg leading-8 text-slate-600">The platform receives customer, transaction, messaging, sanctions and third-party data. Configurable rules, matching, scoring and workflow then produce alerts, cases, dashboards and regulatory outputs for authorised users.</p><div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-3">{blocks.map(([title, copy, Icon]) => <div key={title} className="bg-skysoft-50 p-6"><Icon className="text-brand-600" /><p className="mt-6 font-extrabold text-navy-950">{title}</p><p className="mt-2 text-sm leading-6 text-slate-600">{copy}</p></div>)}</div></div></div></section>;
 }
 
@@ -57,8 +57,7 @@ function Modules() {
   return <section className="section-pad bg-skysoft-50"><div className="site-container"><div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><SectionHeading eyebrow="AML modules" title="Purpose-built controls for financial crime operations" copy="Each module works as part of the wider AML365 environment and follows configurable roles, approvals and reporting workflows." /><Link to="/solutions" className="focus-ring inline-flex items-center gap-2 self-start font-extrabold text-brand-700">View all modules <ArrowRight size={17} /></Link></div><div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{modules.slice(0, 9).map((module, index) => { const Icon = module.icon; return <article key={module.slug} className="group rounded-2xl border border-blue-100 bg-white p-6 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/5"><div className="flex items-center justify-between"><span className="text-xs font-extrabold text-slate-400">{String(index + 1).padStart(2, '0')}</span><Icon className="text-brand-600" size={23} /></div><h3 className="mt-10 text-xl font-extrabold tracking-tight text-navy-950">{module.name}</h3><p className="mt-3 text-sm leading-6 text-slate-600">{module.summary}</p><Link to={`/solutions#${module.slug}`} className="focus-ring mt-6 inline-flex items-center gap-1 text-sm font-bold text-brand-700">Details <ChevronRight size={15} /></Link></article>})}</div></div></section>;
 }
 
-type CapabilityItem = typeof capabilities[number];
-function Capability({ item, reverse }: { item: CapabilityItem; reverse: boolean }) {
+function Capability({ item, reverse }) {
   return <section id={item.id} className={`section-pad scroll-mt-24 ${reverse ? 'bg-skysoft-50' : 'bg-white'}`}><div className="site-container grid items-center gap-14 lg:grid-cols-2"><div className={reverse ? 'lg:order-2' : ''}><p className="eyebrow">{item.eyebrow}</p><h2 className="section-title mt-5 font-semibold text-navy-950">{item.title}</h2><p className="mt-6 text-lg leading-8 text-slate-600">{item.copy}</p><ul className="mt-8 space-y-4">{item.points.map(point => <li key={point} className="flex items-start gap-3 font-semibold text-navy-900"><span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-blue-100 text-brand-700"><Check size={13} /></span>{point}</li>)}</ul></div><div className={`relative ${reverse ? 'lg:order-1' : ''}`}><div className="absolute -inset-4 rounded-[2rem] bg-blue-100/60 blur-2xl" /><div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl shadow-blue-950/10"><div className="mb-4 flex items-center gap-2"><i className="h-2.5 w-2.5 rounded-full bg-blue-300" /><i className="h-2.5 w-2.5 rounded-full bg-blue-200" /><i className="h-2.5 w-2.5 rounded-full bg-slate-200" /><span className="ml-2 text-xs font-bold uppercase tracking-[.12em] text-slate-400">AML365 workbench</span></div><img src={item.image} alt={`${item.eyebrow} interface from the AML365 presentation`} className="min-h-64 w-full rounded-xl bg-slate-50 object-contain" loading="lazy" /></div></div></div></section>;
 }
 
