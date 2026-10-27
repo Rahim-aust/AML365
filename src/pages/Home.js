@@ -31,15 +31,15 @@ function Hero() {
   const cards = [['Customer risk', 'Risk models and review', Gauge], ['Screening', 'Lists and matching', LockKeyhole], ['Monitoring', 'Rules and detection', CircleDot], ['Cases', 'Investigation workflow', FileText]];
   return <section className="blueprint-grid relative overflow-hidden bg-navy-950 pt-20 text-white">
     <div className="absolute inset-x-0 top-0 h-[30rem] bg-[radial-gradient(circle_at_72%_35%,rgba(40,120,237,.32),transparent_38%)]" />
-    <div className="site-container relative grid min-h-[760px] items-center gap-14 py-20 lg:grid-cols-[1.08fr_.92fr] lg:py-28">
+    <div className="site-container relative grid min-h-[620px] max-w-6xl items-center gap-10 py-14 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:py-16">
       <div className="fade-up">
         <p className="eyebrow !text-blue-300">AML365 by DataSoft</p>
-        <h1 className="display-title mt-6 max-w-4xl font-semibold">Connected financial crime compliance for modern banking</h1>
-        <p className="mt-7 max-w-2xl text-lg leading-8 text-blue-100/78 sm:text-xl">Bring screening, customer risk, transaction monitoring, investigation and regulatory reporting into one configurable environment.</p>
+        <h1 className="mt-6 max-w-3xl text-[2.8rem] font-semibold leading-[1.02] tracking-[-.045em] sm:text-5xl lg:text-[3.75rem]">Connected financial crime compliance for modern banking</h1>
+        <p className="mt-6 max-w-xl text-lg leading-8 text-blue-100/78">Bring screening, customer risk, transaction monitoring, investigation and regulatory reporting into one configurable environment.</p>
         <div className="mt-9 flex flex-wrap gap-4"><Link to="/contact" className="focus-ring inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-4 font-extrabold text-white transition hover:bg-blue-500">Request a consultation <ArrowRight size={18} /></Link><Link to="/#modules" className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-4 font-bold text-white transition hover:bg-white/10">Explore solutions</Link></div>
-        <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold text-blue-100/70"><span className="flex items-center gap-2"><Check size={16} className="text-blue-300" /> Configurable rule engine</span><span className="flex items-center gap-2"><Check size={16} className="text-blue-300" /> Role-based workflows</span><span className="flex items-center gap-2"><Check size={16} className="text-blue-300" /> Banking-system integration</span></div>
+        <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-blue-100/70"><span className="flex items-center gap-2"><Check size={16} className="text-blue-300" /> Configurable rule engine</span><span className="flex items-center gap-2"><Check size={16} className="text-blue-300" /> Role-based workflows</span><span className="flex items-center gap-2"><Check size={16} className="text-blue-300" /> Banking-system integration</span></div>
       </div>
-      <div className="fade-up-delay relative mx-auto w-full max-w-xl" aria-label="AML365 compliance workflow illustration">
+      <div className="fade-up-delay relative mx-auto hidden w-full max-w-lg lg:block" aria-label="AML365 compliance workflow illustration">
         <div className="rounded-[2rem] border border-white/15 bg-white/[.07] p-4 shadow-2xl shadow-black/25 backdrop-blur">
           <div className="flex items-center justify-between border-b border-white/10 px-3 pb-4 text-xs font-bold uppercase tracking-[.13em] text-blue-200"><span>Compliance workbench</span><span className="flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-blue-400" /> Active</span></div>
           <div className="grid gap-3 py-4 sm:grid-cols-2">{cards.map(([name, copy, Icon]) => <div key={name} className="rounded-2xl border border-white/10 bg-navy-900/70 p-5"><Icon className="text-blue-300" size={24} /><p className="mt-5 font-bold">{name}</p><p className="mt-1 text-sm text-blue-100/55">{copy}</p></div>)}</div>
