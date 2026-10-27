@@ -51,8 +51,19 @@ src/data/               Product and module content
 src/pages/              Route-level pages
 src/App.js              Application routes
 src/index.css           Tailwind theme and shared styles
+vercel.json             Vercel SPA routing configuration
 .openai/hosting.json    Sites production deployment configuration
 ```
+
+## Deploying to Vercel
+
+1. Import `Rahim-aust/AML365` into Vercel.
+2. Select the **Vite** framework preset.
+3. Keep the project root as the repository root.
+4. Use `npm run build` as the build command and `dist` as the output directory if Vercel does not detect them automatically.
+5. Deploy from `main`; use the other branches for preview deployments.
+
+The tracked `vercel.json` sends direct requests such as `/solutions`, `/contact` and `/careers` to `index.html`, allowing React Router to handle those routes instead of returning a 404.
 
 ## Content governance
 
