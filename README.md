@@ -1,38 +1,65 @@
-# AML365 Website
+# AML365
 
-Production website for DataSoft's AML365 anti-money laundering and financial crime compliance product.
+Enterprise product website for AML365, DataSoft's Anti-Money Laundering and financial crime compliance solution for banks and financial institutions.
 
-## Stack
+## Technology
 
 - React 19
-- TypeScript
-- Vite
+- JavaScript (ES modules)
+- Vite 8
 - Tailwind CSS 4
 - React Router
 
-## Local setup
+## Getting started
+
+### Requirements
+
+- Node.js 20 or later
+- npm 10 or later
+
+### Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local URL shown by Vite.
+Vite will print the local development URL in the terminal.
 
-## Production build
+### Production build
 
 ```bash
 npm run build
+npm run preview
 ```
 
-The static production output is written to `dist/`. The Sites hosting manifest in `.openai/hosting.json` points to that directory.
+The optimized static build is generated in `dist/`.
 
-## Routes
+## Available routes
 
-- `/` - complete product landing page
-- `/solutions` - detailed solution catalogue
-- `/contact` - validated enquiry form
+- `/` — product landing page
+- `/solutions` — AML solution and module catalogue
+- `/contact` — validated business enquiry form
+- `/careers` — current recruitment status
 
-## Content and assets
+## Project structure
 
-Product statements, capability boundaries, client logos and product screenshots come from the supplied AML presentation. AI and machine-learning capabilities are explicitly labelled as planned roadmap items. The contact form validates entries in the browser and opens the visitor's email application for final review and sending.
+```text
+public/                 Static images, product screenshots and client logos
+src/components/         Reusable interface components
+src/data/               Product and module content
+src/pages/              Route-level pages
+src/App.js              Application routes
+src/index.css           Tailwind theme and shared styles
+.openai/hosting.json    Sites production deployment configuration
+```
+
+## Content governance
+
+Product descriptions, capability boundaries, client logos and screenshots are based on the supplied AML presentation. Planned artificial-intelligence and machine-learning capabilities are labelled as roadmap items rather than current product features.
+
+Before reusing client marks or publishing content in another environment, confirm that the appropriate usage permissions are in place.
+
+## License
+
+The source code is available under the [MIT License](LICENSE). Product names, logos, screenshots, written product material and third-party client marks may be subject to separate ownership and usage restrictions.
