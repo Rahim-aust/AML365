@@ -57,7 +57,7 @@ export function ContactForm() {
       className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_25px_80px_rgba(6,20,43,.08)] sm:p-9"
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="text-sm font-bold text-navy-900">
+        <label className="text-sm font-semibold text-navy-900">
           Full name
           <input
             className={fieldClass("name")}
@@ -71,7 +71,7 @@ export function ContactForm() {
             </span>
           )}
         </label>
-        <label className="text-sm font-bold text-navy-900">
+        <label className="text-sm font-semibold text-navy-900">
           Work email
           <input
             type="email"
@@ -86,7 +86,7 @@ export function ContactForm() {
             </span>
           )}
         </label>
-        <label className="text-sm font-bold text-navy-900">
+        <label className="text-sm font-semibold text-navy-900">
           Institution
           <input
             className={fieldClass("institution")}
@@ -100,7 +100,7 @@ export function ContactForm() {
             </span>
           )}
         </label>
-        <label className="text-sm font-bold text-navy-900">
+        <label className="text-sm font-semibold text-navy-900">
           Role <span className="font-normal text-slate-400">(optional)</span>
           <input
             className={fieldClass("role")}
@@ -109,7 +109,7 @@ export function ContactForm() {
           />
         </label>
       </div>
-      <label className="mt-5 block text-sm font-bold text-navy-900">
+      <label className="mt-5 block text-sm font-semibold text-navy-900">
         Area of interest
         <select
           className={fieldClass("interest")}
@@ -131,7 +131,7 @@ export function ContactForm() {
           </span>
         )}
       </label>
-      <label className="mt-5 block text-sm font-bold text-navy-900">
+      <label className="mt-5 block text-sm font-semibold text-navy-900">
         What would you like to discuss?
         <textarea
           rows={5}
@@ -167,7 +167,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="focus-ring mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-4 font-extrabold text-white transition hover:bg-brand-700 disabled:opacity-60"
+        className="focus-ring mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-4 font-bold text-white transition hover:bg-brand-700 disabled:opacity-60"
       >
         {status === "sending" ? (
           <LoaderCircle className="animate-spin" size={19} />

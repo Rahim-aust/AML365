@@ -15,6 +15,13 @@ export default defineConfig({
     react({ include: /\.js$/ }),
     tailwindcss(),
   ],
+  optimizeDeps: {
+    rolldownOptions: {
+      moduleTypes: {
+        '.js': 'jsx',
+      },
+    },
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: true,

@@ -100,10 +100,10 @@ function Hero() {
       <div className="site-container relative grid min-h-[540px] items-center gap-9 py-10 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:py-12">
         <div className="fade-up">
           <p className="eyebrow !text-blue-300">AML365 by DataSoft</p>
-          <h1 className="mt-5 max-w-3xl text-[2.8rem] font-semibold leading-[1.02] tracking-[-.045em] sm:text-5xl lg:text-[3.75rem]">
+          <h1 className="page-title mt-4 max-w-3xl">
             Connected financial crime compliance for modern banking
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-8 text-blue-100/78">
+          <p className="lead-copy mt-5 max-w-xl text-blue-100/78">
             Bring screening, customer risk, transaction monitoring,
             investigation and regulatory reporting into one configurable
             environment.
@@ -111,7 +111,7 @@ function Hero() {
           <div className="mt-7 flex flex-wrap gap-4">
             <Link
               to="/contact"
-              className="focus-ring inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 font-extrabold text-white transition hover:bg-blue-500"
+              className="focus-ring inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 font-bold text-white transition hover:bg-blue-500"
             >
               Request a consultation <ArrowRight size={18} />
             </Link>
@@ -141,7 +141,7 @@ function Hero() {
           aria-label="AML365 compliance workflow illustration"
         >
           <div className="rounded-[2rem] border border-white/15 bg-white/[.07] p-4 shadow-2xl shadow-black/25 backdrop-blur">
-            <div className="flex items-center justify-between border-b border-white/10 px-3 pb-4 text-xs font-bold uppercase tracking-[.13em] text-blue-200">
+            <div className="meta-label flex items-center justify-between border-b border-white/10 px-3 pb-4 text-blue-200">
               <span>Compliance workbench</span>
               <span className="flex items-center gap-2">
                 <i className="h-2 w-2 rounded-full bg-blue-400" /> Active
@@ -162,7 +162,7 @@ function Hero() {
             <div className="rounded-2xl bg-brand-600 p-4">
               <div className="flex items-end justify-between">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-100">
+                  <p className="meta-label text-blue-100">
                     Connected outcome
                   </p>
                   <p className="mt-1.5 text-lg font-bold">Alert to decision</p>
@@ -194,12 +194,12 @@ function Overview() {
           title="One operating environment across the AML lifecycle"
         />
         <div>
-          <p className="text-2xl font-semibold leading-9 tracking-tight text-navy-900">
+          <p className="lead-copy font-semibold text-navy-900">
             AML365 brings separate compliance activities into a consistent
             workflow while preserving the controls and responsibilities each
             function requires.
           </p>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="body-copy mt-5 text-slate-600">
             The platform receives customer, transaction, messaging, sanctions
             and third-party data. Configurable rules, matching, scoring and
             workflow then produce alerts, cases, dashboards and regulatory
@@ -209,7 +209,7 @@ function Overview() {
             {blocks.map(([title, copy, Icon]) => (
               <div key={title} className="bg-skysoft-50 p-6">
                 <Icon className="text-brand-600" />
-                <p className="mt-6 font-extrabold text-navy-950">{title}</p>
+                <p className="mt-5 font-semibold text-navy-950">{title}</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{copy}</p>
               </div>
             ))}
@@ -236,7 +236,7 @@ function Modules() {
             />
             <Link
               to="/solutions"
-              className="focus-ring inline-flex items-center gap-2 self-start font-extrabold text-brand-700"
+              className="focus-ring inline-flex items-center gap-2 self-start font-bold text-brand-700"
             >
               View all modules <ArrowRight size={17} />
             </Link>
@@ -250,12 +250,12 @@ function Modules() {
                   className="group flex min-h-full flex-col rounded-2xl border border-blue-100 bg-white p-5 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/5 sm:p-6"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-extrabold text-slate-400">
+                    <span className="meta-label text-slate-500">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <Icon className="text-brand-600" size={23} />
                   </div>
-                  <h3 className="mt-8 text-xl font-extrabold tracking-tight text-navy-950 sm:mt-10">
+                  <h3 className="card-title mt-8 text-navy-950 sm:mt-10">
                     {module.name}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
@@ -291,15 +291,15 @@ function Capability({ item, reverse }) {
       <div className="site-container grid items-center gap-14 lg:grid-cols-2">
         <div className={reverse ? "lg:order-2" : ""}>
           <p className="eyebrow">{item.eyebrow}</p>
-          <h2 className="section-title mt-5 font-semibold text-navy-950">
+          <h2 className="section-title mt-4 text-navy-950">
             {item.title}
           </h2>
-          <p className="mt-6 text-lg leading-8 text-slate-600">{item.copy}</p>
+          <p className="lead-copy mt-5 text-slate-600">{item.copy}</p>
           <ul className="mt-8 space-y-4">
             {item.points.map((point) => (
               <li
                 key={point}
-                className="flex items-start gap-3 font-semibold text-navy-900"
+                className="flex items-start gap-3 font-medium text-navy-900"
               >
                 <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-blue-100 text-brand-700">
                   <Check size={13} />
@@ -316,7 +316,7 @@ function Capability({ item, reverse }) {
               <i className="h-2.5 w-2.5 rounded-full bg-blue-300" />
               <i className="h-2.5 w-2.5 rounded-full bg-blue-200" />
               <i className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-              <span className="ml-2 text-xs font-bold uppercase tracking-[.12em] text-slate-400">
+              <span className="meta-label ml-2 text-slate-500">
                 AML365 workbench
               </span>
             </div>
@@ -347,7 +347,7 @@ function Roadmap() {
             copy="The source presentation identifies these items as plans. They are shown separately from current AML365 functionality and should not be interpreted as generally available features."
             light
           />
-          <span className="inline-flex self-start rounded-full border border-blue-300/30 bg-blue-400/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[.14em] text-blue-200">
+          <span className="meta-label inline-flex self-start rounded-full border border-blue-300/30 bg-blue-400/10 px-4 py-2 text-blue-200">
             <Sparkles size={14} className="mr-2" /> Roadmap / planned
           </span>
         </div>
@@ -355,10 +355,10 @@ function Roadmap() {
           {roadmap.map(([title, copy], index) => (
             <article key={title} className="bg-navy-900 p-7">
               <div className="flex items-center gap-4">
-                <span className="text-xs font-extrabold text-blue-300">
+                <span className="meta-label text-blue-300">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-extrabold">{title}</h3>
+                <h3 className="font-semibold">{title}</h3>
               </div>
               <p className="mt-4 pl-9 text-sm leading-6 text-blue-100/65">
                 {copy}
@@ -405,10 +405,10 @@ function Dashboards() {
               </figcaption>
             </figure>
             <div className="rounded-3xl bg-brand-600 p-7 text-white">
-              <p className="text-xs font-extrabold uppercase tracking-[.15em] text-blue-100">
+              <p className="meta-label text-blue-100">
                 Management reporting
               </p>
-              <p className="mt-4 text-2xl font-extrabold tracking-tight">
+              <p className="mt-3 text-xl font-semibold leading-7">
                 Progress, status, productivity and quality views
               </p>
               <p className="mt-4 text-sm leading-6 text-blue-100/75">
@@ -473,10 +473,10 @@ function Implementation() {
               key={number}
               className="border-t-2 border-brand-600 bg-white p-7"
             >
-              <span className="text-xs font-extrabold text-brand-600">
+              <span className="meta-label text-brand-600">
                 {number}
               </span>
-              <h3 className="mt-8 text-xl font-extrabold text-navy-950">
+              <h3 className="card-title mt-7 text-navy-950">
                 {title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">{copy}</p>
@@ -497,7 +497,7 @@ function Clients() {
       <div className="site-container flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow">Selected banking clients</p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-navy-950 sm:text-3xl">
+          <h2 className="mt-3 text-2xl font-semibold leading-tight text-navy-950 sm:text-3xl">
             AML experience across Bangladesh’s financial sector
           </h2>
         </div>
@@ -541,12 +541,12 @@ function Contact() {
             copy="Tell us what you are evaluating. The AML365 team can continue the conversation around scope, integration and implementation."
           />
           <div className="mt-9 rounded-2xl border border-blue-100 bg-white p-6">
-            <p className="text-xs font-extrabold uppercase tracking-[.14em] text-slate-400">
+            <p className="meta-label text-slate-500">
               Direct contact
             </p>
             <a
               href="mailto:info@datasoft-bd.com"
-              className="focus-ring mt-3 inline-block text-lg font-extrabold text-brand-700"
+              className="focus-ring mt-3 inline-block text-lg font-bold text-brand-700"
             >
               info@datasoft-bd.com
             </a>

@@ -7,10 +7,10 @@ export function ContactPage() {
       <div className="site-container grid gap-12 py-16 lg:grid-cols-[.75fr_1.25fr] lg:py-20">
         <div>
           <p className="eyebrow">Contact AML365</p>
-          <h1 className="mt-6 text-5xl font-semibold leading-[.98] tracking-[-.055em] text-navy-950 sm:text-7xl">
+          <h1 className="page-title mt-4 text-navy-950">
             A focused conversation about your AML priorities
           </h1>
-          <p className="mt-7 text-lg leading-8 text-slate-600">
+          <p className="lead-copy mt-5 text-slate-600">
             Share the modules, integration needs or implementation questions you
             want to discuss. The form prepares an email for your review before
             anything is sent.
@@ -18,7 +18,7 @@ export function ContactPage() {
           <div className="mt-10 space-y-4">
             <a
               href="mailto:info@datasoft-bd.com"
-              className="focus-ring flex items-center gap-3 font-bold text-brand-700"
+              className="focus-ring flex items-center gap-3 font-semibold text-brand-700"
             >
               <Mail size={19} /> info@datasoft-bd.com
             </a>

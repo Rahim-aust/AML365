@@ -107,7 +107,7 @@ export function SiteLayout({ children }) {
             </p>
           </div>
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[.17em] text-slate-400">
+            <p className="meta-label text-slate-500">
               Explore
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm font-semibold text-slate-600">
@@ -118,7 +118,7 @@ export function SiteLayout({ children }) {
             </div>
           </div>
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[.17em] text-slate-400">
+            <p className="meta-label text-slate-500">
               Contact
             </p>
             <a

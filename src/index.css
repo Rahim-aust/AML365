@@ -27,7 +27,17 @@ body {
   background: #fff;
   color: #0a1d3b;
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
 }
 button,
 a,
@@ -47,23 +57,41 @@ select {
 .section-pad {
   padding-block: clamp(3.25rem, 4vw, 4rem);
 }
-.display-title {
-  font-size: clamp(3.25rem, 7.2vw, 6.7rem);
-  line-height: 0.94;
-  letter-spacing: -0.065em;
+.page-title {
+  font-size: clamp(2.65rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
 }
 .section-title {
-  font-size: clamp(2.35rem, 4.8vw, 4.35rem);
-  line-height: 1.02;
-  letter-spacing: -0.055em;
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.lead-copy {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+.body-copy {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.meta-label,
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: 0.035em;
 }
 .eyebrow {
   color: #155bd7;
-  font-size: 0.72rem;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 .focus-ring:focus-visible {
   outline: 3px solid #60a5fa;

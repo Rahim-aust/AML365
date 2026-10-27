@@ -70,7 +70,7 @@ export function ModuleModal({ module, onClose }) {
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-brand-700">
               <Icon size={21} />
             </span>
-            <span className="text-xs font-extrabold uppercase tracking-[.15em] text-brand-700">
+            <span className="meta-label text-brand-700">
               AML365 module
             </span>
           </div>
@@ -86,32 +86,32 @@ export function ModuleModal({ module, onClose }) {
         </div>
 
         <div className="px-5 py-8 sm:px-8 sm:py-10">
-          <p className="text-xs font-extrabold uppercase tracking-[.16em] text-slate-400">
+          <p className="meta-label text-slate-500">
             Current capability
           </p>
           <h2
             id={titleId}
-            className="mt-4 text-3xl font-semibold leading-tight tracking-[-.035em] text-navy-950 sm:text-4xl"
+            className="mt-3 text-3xl font-semibold leading-tight text-navy-950 sm:text-4xl"
           >
             {module.name}
           </h2>
           <p
             id={descriptionId}
-            className="mt-5 text-lg font-semibold leading-8 text-navy-900"
+            className="lead-copy mt-5 font-semibold text-navy-900"
           >
             {module.summary}
           </p>
-          <p className="mt-5 leading-7 text-slate-600">{module.details}</p>
+          <p className="body-copy mt-5 text-slate-600">{module.details}</p>
 
           <div className="mt-8 rounded-2xl border border-blue-100 bg-skysoft-50 p-5 sm:p-6">
-            <h3 className="text-sm font-extrabold uppercase tracking-[.13em] text-navy-950">
+            <h3 className="text-base font-semibold text-navy-950">
               Core capabilities
             </h3>
             <ul className="mt-5 grid gap-4 sm:grid-cols-2">
               {module.features.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-3 text-sm font-semibold leading-6 text-navy-900"
+                  className="flex items-start gap-3 text-sm font-medium leading-6 text-navy-900"
                 >
                   <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-blue-100 text-brand-700">
                     <Check size={13} />
@@ -130,7 +130,7 @@ export function ModuleModal({ module, onClose }) {
             <Link
               to="/contact"
               onClick={onClose}
-              className="focus-ring inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3 font-extrabold text-white transition hover:bg-brand-700"
+              className="focus-ring inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3 font-bold text-white transition hover:bg-brand-700"
             >
               Discuss this module <ArrowRight size={17} />
             </Link>

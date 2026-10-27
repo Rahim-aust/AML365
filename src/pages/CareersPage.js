@@ -10,17 +10,17 @@ export function CareersPage() {
             <BriefcaseBusiness size={26} />
           </span>
           <p className="eyebrow mt-7">Careers at AML365</p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-[-.04em] text-navy-950 sm:text-5xl">
+          <h1 className="page-title mt-4 text-navy-950">
             We are not currently recruiting
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-600">
+          <p className="lead-copy mx-auto mt-5 max-w-xl text-slate-600">
             There are no open positions with the AML365 team at this time.
             Please check this page again for future opportunities.
           </p>
           <div className="mt-9 border-t border-slate-200 pt-7">
             <Link
               to="/"
-              className="focus-ring inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-extrabold text-navy-950 transition hover:border-blue-300 hover:bg-blue-50"
+              className="focus-ring inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-bold text-navy-950 transition hover:border-blue-300 hover:bg-blue-50"
             >
               <ArrowLeft size={17} /> Return to AML365
             </Link>
