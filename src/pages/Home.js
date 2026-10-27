@@ -1,6 +1,8 @@
+import { useCallback, useState } from 'react';
 import { ArrowRight, Check, ChevronRight, CircleDot, Database, FileText, Gauge, Layers3, LockKeyhole, Settings2, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ContactForm } from '../components/ContactForm.js';
+import { ModuleModal } from '../components/ModuleModal.js';
 import { SectionHeading } from '../components/SectionHeading.js';
 import { clients, modules, roadmap } from '../data/content.js';
 
@@ -54,7 +56,13 @@ function Overview() {
 }
 
 function Modules() {
-  return <section className="section-pad bg-skysoft-50"><div className="site-container"><div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><SectionHeading eyebrow="AML modules" title="Purpose-built controls for financial crime operations" copy="Each module works as part of the wider AML365 environment and follows configurable roles, approvals and reporting workflows." /><Link to="/solutions" className="focus-ring inline-flex items-center gap-2 self-start font-extrabold text-brand-700">View all modules <ArrowRight size={17} /></Link></div><div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{modules.slice(0, 9).map((module, index) => { const Icon = module.icon; return <article key={module.slug} className="group rounded-2xl border border-blue-100 bg-white p-6 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/5"><div className="flex items-center justify-between"><span className="text-xs font-extrabold text-slate-400">{String(index + 1).padStart(2, '0')}</span><Icon className="text-brand-600" size={23} /></div><h3 className="mt-10 text-xl font-extrabold tracking-tight text-navy-950">{module.name}</h3><p className="mt-3 text-sm leading-6 text-slate-600">{module.summary}</p><Link to={`/solutions#${module.slug}`} className="focus-ring mt-6 inline-flex items-center gap-1 text-sm font-bold text-brand-700">Details <ChevronRight size={15} /></Link></article>})}</div></div></section>;
+  const [selectedModule, setSelectedModule] = useState(null);
+  const closeModal = useCallback(() => setSelectedModule(null), []);
+
+  return <>
+    <section className="section-pad bg-skysoft-50"><div className="site-container"><div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><SectionHeading eyebrow="AML modules" title="Purpose-built controls for financial crime operations" copy="Each module works as part of the wider AML365 environment and follows configurable roles, approvals and reporting workflows." /><Link to="/solutions" className="focus-ring inline-flex items-center gap-2 self-start font-extrabold text-brand-700">View all modules <ArrowRight size={17} /></Link></div><div className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">{modules.slice(0, 9).map((module, index) => { const Icon = module.icon; return <article key={module.slug} className="group flex min-h-full flex-col rounded-2xl border border-blue-100 bg-white p-5 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/5 sm:p-6"><div className="flex items-center justify-between"><span className="text-xs font-extrabold text-slate-400">{String(index + 1).padStart(2, '0')}</span><Icon className="text-brand-600" size={23} /></div><h3 className="mt-8 text-xl font-extrabold tracking-tight text-navy-950 sm:mt-10">{module.name}</h3><p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{module.summary}</p><button type="button" onClick={() => setSelectedModule(module)} aria-haspopup="dialog" className="focus-ring mt-6 inline-flex min-h-11 items-center gap-1 self-start rounded-lg text-sm font-bold text-brand-700 transition hover:text-brand-600">View details <ChevronRight size={15} /></button></article>})}</div></div></section>
+    {selectedModule && <ModuleModal module={selectedModule} onClose={closeModal} />}
+  </>;
 }
 
 function Capability({ item, reverse }) {
