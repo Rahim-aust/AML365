@@ -188,7 +188,7 @@ function Overview() {
   ];
   return (
     <section id="overview" className="section-pad scroll-mt-24 bg-white">
-      <div className="site-container grid gap-14 lg:grid-cols-[.8fr_1.2fr]">
+      <div className="site-container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-12">
         <SectionHeading
           eyebrow="Product overview"
           title="One operating environment across the AML lifecycle"
@@ -205,7 +205,7 @@ function Overview() {
             workflow then produce alerts, cases, dashboards and regulatory
             outputs for authorised users.
           </p>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-3">
+          <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-3">
             {blocks.map(([title, copy, Icon]) => (
               <div key={title} className="bg-skysoft-50 p-6">
                 <Icon className="text-brand-600" />

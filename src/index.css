@@ -41,11 +41,11 @@ select {
   color: #06142b;
 }
 .site-container {
-  width: min(100% - 2rem, 88rem);
+  width: min(100% - 2rem, 96rem);
   margin-inline: auto;
 }
 .section-pad {
-  padding-block: clamp(4rem, 6vw, 5.5rem);
+  padding-block: clamp(3.25rem, 4vw, 4rem);
 }
 .display-title {
   font-size: clamp(3.25rem, 7.2vw, 6.7rem);
