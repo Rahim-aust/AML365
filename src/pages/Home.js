@@ -18,6 +18,7 @@ import { ContactForm } from "../components/ContactForm.js";
 import { ModuleModal } from "../components/ModuleModal.js";
 import { SectionHeading } from "../components/SectionHeading.js";
 import { clients, modules, roadmap } from "../data/content.js";
+import { CONTACT_EMAIL } from "../config/contact.js";
 
 const capabilities = [
   {
@@ -622,10 +623,10 @@ function Contact() {
               Direct contact
             </p>
             <a
-              href="mailto:info@datasoft-bd.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="focus-ring mt-3 inline-block text-lg font-bold text-brand-700"
             >
-              info@datasoft-bd.com
+              {CONTACT_EMAIL}
             </a>
           </div>
         </div>

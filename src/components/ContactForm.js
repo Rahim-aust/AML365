@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AlertCircle, CheckCircle2, LoaderCircle, Send } from "lucide-react";
+import { CONTACT_EMAIL, createEnquiryMailto } from "../config/contact.js";
 
 const initial = {
   name: "",
@@ -36,13 +37,7 @@ export function ContactForm() {
     if (!validate()) return;
     setStatus("sending");
     try {
-      const subject = encodeURIComponent(
-        `AML365 enquiry from ${form.institution}`,
-      );
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nWork email: ${form.email}\nInstitution: ${form.institution}\nRole: ${form.role || "Not provided"}\nInterest: ${form.interest}\n\n${form.message}`,
-      );
-      window.location.href = `mailto:info@datasoft-bd.com?subject=${subject}&body=${body}`;
+      window.location.href = createEnquiryMailto(form);
       window.setTimeout(() => setStatus("success"), 300);
     } catch {
       setStatus("error");
@@ -187,7 +182,7 @@ export function ContactForm() {
         {status === "error" && (
           <p className="flex items-center gap-2 font-semibold text-red-600">
             <AlertCircle size={18} /> We could not open your email application.
-            Email info@datasoft-bd.com directly.
+            Email {CONTACT_EMAIL} directly.
           </p>
         )}
       </div>

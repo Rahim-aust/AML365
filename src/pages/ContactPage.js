@@ -1,5 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "../components/ContactForm.js";
+import { CONTACT_EMAIL } from "../config/contact.js";
 
 export function ContactPage() {
   return (
@@ -17,10 +18,10 @@ export function ContactPage() {
           </p>
           <div className="mt-10 space-y-4">
             <a
-              href="mailto:info@datasoft-bd.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="focus-ring flex items-center gap-3 font-semibold text-brand-700"
             >
-              <Mail size={19} /> info@datasoft-bd.com
+              <Mail size={19} /> {CONTACT_EMAIL}
             </a>
             <p className="flex items-start gap-3 text-sm leading-6 text-slate-600">
               <MapPin size={19} className="mt-0.5 shrink-0 text-brand-600" />{" "}

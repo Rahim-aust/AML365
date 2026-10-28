@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, ArrowUpRight, Mail, Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { PAGE_LOADER_EVENT } from "./PageLoader.js";
+import { CONTACT_EMAIL } from "../config/contact.js";
 
 const links = [
   ["Overview", "/#overview"],
@@ -171,11 +172,11 @@ export function SiteLayout({ children }) {
                 implementation.
               </p>
               <a
-                href="mailto:info@datasoft-bd.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="focus-ring mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-200 transition hover:text-white"
               >
                 <Mail size={17} aria-hidden="true" />
-                info@datasoft-bd.com
+                {CONTACT_EMAIL}
                 <ArrowUpRight size={14} aria-hidden="true" />
               </a>
             </div>
