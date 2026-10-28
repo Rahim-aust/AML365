@@ -9,6 +9,7 @@ import {
   Gauge,
   Layers3,
   LockKeyhole,
+  ShieldCheck,
   Settings2,
   Sparkles,
 } from "lucide-react";
@@ -88,25 +89,20 @@ export function HomePage() {
 }
 
 function Hero() {
-  const cards = [
-    ["Customer risk", "Risk models and review", Gauge],
-    ["Screening", "Lists and matching", LockKeyhole],
-    ["Monitoring", "Rules and detection", CircleDot],
-    ["Cases", "Investigation workflow", FileText],
-  ];
   return (
-    <section className="blueprint-grid relative overflow-hidden bg-navy-950 pt-20 text-white">
-      <div className="absolute inset-x-0 top-0 h-[30rem] bg-[radial-gradient(circle_at_72%_35%,rgba(40,120,237,.32),transparent_38%)]" />
-      <div className="site-container relative grid min-h-[540px] items-center gap-9 py-10 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:py-12">
-        <div className="fade-up">
+    <section className="aml-hero relative overflow-hidden pt-20 text-white">
+      <div className="aml-hero-pattern absolute inset-0" aria-hidden="true" />
+      <div className="site-container relative grid min-h-[570px] items-center gap-12 py-12 lg:grid-cols-[1.02fr_.98fr] lg:gap-14 lg:py-14">
+        <div className="fade-up max-w-3xl">
           <p className="eyebrow !text-blue-300">AML365 by DataSoft</p>
           <h1 className="page-title mt-4 max-w-3xl">
-            Connected financial crime compliance for modern banking
+            Financial crime compliance, connected
           </h1>
-          <p className="lead-copy mt-5 max-w-xl text-blue-100/78">
-            Bring screening, customer risk, transaction monitoring,
-            investigation and regulatory reporting into one configurable
-            environment.
+          <p className="lead-copy mt-6 max-w-2xl text-blue-100/80">
+            Anti-money laundering starts with knowing customers, recognising
+            risk and acting on unusual activity. AML365 connects screening,
+            customer risk, transaction monitoring, investigation and regulatory
+            reporting in one controlled platform.
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
             <Link
@@ -124,59 +120,93 @@ function Hero() {
           </div>
           <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-blue-100/70">
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-blue-300" /> Configurable rule
-              engine
+              <Check size={16} className="text-blue-300" /> Know your customer
             </span>
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-blue-300" /> Role-based workflows
+              <Check size={16} className="text-blue-300" /> Detect unusual
+              activity
             </span>
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-blue-300" /> Banking-system
-              integration
+              <Check size={16} className="text-blue-300" /> Manage regulatory
+              workflows
             </span>
           </div>
         </div>
-        <div
-          className="fade-up-delay relative mx-auto hidden w-full max-w-lg lg:block"
-          aria-label="AML365 compliance workflow illustration"
-        >
-          <div className="rounded-[2rem] border border-white/15 bg-white/[.07] p-4 shadow-2xl shadow-black/25 backdrop-blur">
-            <div className="meta-label flex items-center justify-between border-b border-white/10 px-3 pb-4 text-blue-200">
-              <span>Compliance workbench</span>
-              <span className="flex items-center gap-2">
-                <i className="h-2 w-2 rounded-full bg-blue-400" /> Active
-              </span>
-            </div>
-            <div className="grid gap-3 py-3 sm:grid-cols-2">
-              {cards.map(([name, copy, Icon]) => (
-                <div
-                  key={name}
-                  className="rounded-2xl border border-white/10 bg-navy-900/70 p-4"
-                >
-                  <Icon className="text-blue-300" size={22} />
-                  <p className="mt-4 font-bold">{name}</p>
-                  <p className="mt-1 text-sm text-blue-100/55">{copy}</p>
-                </div>
-              ))}
-            </div>
-            <div className="rounded-2xl bg-brand-600 p-4">
-              <div className="flex items-end justify-between">
-                <div>
-                  <p className="meta-label text-blue-100">
-                    Connected outcome
-                  </p>
-                  <p className="mt-1.5 text-lg font-bold">Alert to decision</p>
-                </div>
-                <ArrowRight />
-              </div>
-              <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/20">
-                <div className="h-full w-4/5 rounded-full bg-white" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <AmlNetworkVisual />
       </div>
     </section>
+  );
+}
+
+function AmlNetworkVisual() {
+  return (
+    <div
+      className="fade-up-delay relative mx-auto hidden min-h-[420px] w-full max-w-[600px] lg:block"
+      aria-label="Illustration of connected anti-money laundering controls"
+    >
+      <svg
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 600 440"
+        fill="none"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="aml-ring" x1="88" y1="50" x2="518" y2="394">
+            <stop stopColor="#7DD3FC" stopOpacity=".65" />
+            <stop offset="1" stopColor="#2563EB" stopOpacity=".15" />
+          </linearGradient>
+          <radialGradient id="aml-core">
+            <stop stopColor="#2878ED" stopOpacity=".32" />
+            <stop offset="1" stopColor="#2878ED" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="300" cy="220" r="198" stroke="url(#aml-ring)" strokeOpacity=".25" />
+        <circle cx="300" cy="220" r="150" stroke="#93C5FD" strokeOpacity=".12" strokeDasharray="5 10" />
+        <circle cx="300" cy="220" r="116" fill="url(#aml-core)" />
+        <path d="M102 130C172 102 217 145 275 196" stroke="#60A5FA" strokeOpacity=".48" strokeWidth="1.5" />
+        <path d="M498 116C426 107 384 151 329 198" stroke="#60A5FA" strokeOpacity=".48" strokeWidth="1.5" />
+        <path d="M92 330C170 348 225 294 276 242" stroke="#60A5FA" strokeOpacity=".38" strokeWidth="1.5" />
+        <path d="M508 334C431 351 380 295 330 242" stroke="#60A5FA" strokeOpacity=".38" strokeWidth="1.5" />
+        {[
+          [102, 130],
+          [498, 116],
+          [92, 330],
+          [508, 334],
+          [300, 22],
+          [300, 418],
+        ].map(([cx, cy]) => (
+          <g key={`${cx}-${cy}`}>
+            <circle cx={cx} cy={cy} r="7" fill="#0A1D3B" stroke="#7DD3FC" strokeOpacity=".75" />
+            <circle cx={cx} cy={cy} r="2.5" fill="#93C5FD" />
+          </g>
+        ))}
+      </svg>
+
+      <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-blue-200/25 bg-navy-950/80 shadow-[0_0_70px_rgba(40,120,237,.32)] backdrop-blur-xl">
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500 text-white shadow-lg shadow-blue-500/25">
+          <ShieldCheck size={30} aria-hidden="true" />
+        </div>
+        <p className="mt-3 text-lg font-semibold">AML365</p>
+        <p className="text-xs text-blue-200/65">Connected controls</p>
+      </div>
+
+      <div className="aml-visual-label left-2 top-[4.4rem]">
+        <LockKeyhole size={17} />
+        <span>Screening</span>
+      </div>
+      <div className="aml-visual-label right-0 top-14">
+        <Gauge size={17} />
+        <span>Customer risk</span>
+      </div>
+      <div className="aml-visual-label bottom-14 left-0">
+        <CircleDot size={17} />
+        <span>Monitoring</span>
+      </div>
+      <div className="aml-visual-label bottom-14 right-0">
+        <FileText size={17} />
+        <span>Reporting</span>
+      </div>
+    </div>
   );
 }
 
