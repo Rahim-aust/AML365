@@ -1,7 +1,13 @@
 export function SectionHeading({ eyebrow, title, copy, light = false }) {
   return (
     <div className="max-w-3xl">
-      <p className={`eyebrow ${light ? "!text-blue-300" : ""}`}>{eyebrow}</p>
+      <p className={`section-label ${light ? "!text-blue-300" : ""}`}>
+        <span
+          className={`section-label-mark ${light ? "bg-blue-300" : "bg-brand-500"}`}
+          aria-hidden="true"
+        />
+        {eyebrow}
+      </p>
       <h2
         className={`section-title mt-4 ${light ? "text-white" : "text-navy-950"}`}
       >

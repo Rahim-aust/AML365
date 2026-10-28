@@ -94,7 +94,13 @@ function Hero() {
       <div className="aml-hero-pattern absolute inset-0" aria-hidden="true" />
       <div className="site-container relative grid min-h-[570px] items-center gap-12 py-12 lg:grid-cols-[1.02fr_.98fr] lg:gap-14 lg:py-14">
         <div className="fade-up max-w-3xl">
-          <p className="eyebrow !text-blue-300">AML365 by DataSoft</p>
+          <p className="section-label !text-blue-300">
+            <span
+              className="section-label-mark bg-blue-300"
+              aria-hidden="true"
+            />
+            AML365 by DataSoft
+          </p>
           <h1 className="page-title mt-4 max-w-3xl">
             Financial crime compliance, connected
           </h1>
@@ -543,7 +549,13 @@ function Clients() {
     >
       <div className="site-container">
         <div>
-          <p className="eyebrow">Selected banking clients</p>
+          <p className="section-label">
+            <span
+              className="section-label-mark bg-brand-500"
+              aria-hidden="true"
+            />
+            Selected banking clients
+          </p>
           <h2 className="mt-3 text-2xl font-semibold leading-tight text-navy-950 sm:text-3xl">
             AML experience across Bangladesh’s financial sector
           </h2>

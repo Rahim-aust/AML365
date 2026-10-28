@@ -93,6 +93,22 @@ select {
 .eyebrow {
   color: #155bd7;
 }
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #155bd7;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.section-label-mark {
+  width: 0.25rem;
+  height: 1.5rem;
+  flex: none;
+  border-radius: 999px;
+}
 .focus-ring:focus-visible {
   outline: 3px solid #60a5fa;
   outline-offset: 3px;
