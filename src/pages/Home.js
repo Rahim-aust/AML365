@@ -302,7 +302,7 @@ function Modules() {
                 >
                   <div className="flex items-center justify-between">
                     <span className="meta-label text-slate-500">
-                      {String(index + 1).padStart(2, "0")}
+                      {module.number}
                     </span>
                     <Icon className="text-brand-600" size={23} />
                   </div>

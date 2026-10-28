@@ -4,7 +4,6 @@ import {
   BellRing,
   Binoculars,
   FileCheck2,
-  FileSearch,
   Landmark,
   Network,
   Radar,
@@ -15,6 +14,7 @@ import {
 
 export const modules = [
   {
+    number: "01",
     slug: "sanctions-screening",
     name: "Sanctions and watchlist screening",
     summary:
@@ -29,6 +29,7 @@ export const modules = [
     icon: SearchCheck,
   },
   {
+    number: "02",
     slug: "kyc-risk",
     name: "KYC, transaction profile and risk",
     summary:
@@ -43,6 +44,7 @@ export const modules = [
     icon: BadgeCheck,
   },
   {
+    number: "03",
     slug: "transaction-monitoring",
     name: "Transaction monitoring",
     summary:
@@ -57,6 +59,7 @@ export const modules = [
     icon: Radar,
   },
   {
+    number: "04",
     slug: "activity-filing",
     name: "Activity filing",
     summary:
@@ -71,6 +74,7 @@ export const modules = [
     icon: FileCheck2,
   },
   {
+    number: "05",
     slug: "ctr",
     name: "Cash transaction reporting",
     summary: "CTR alert generation, review and regulatory report preparation.",
@@ -84,6 +88,7 @@ export const modules = [
     icon: Banknote,
   },
   {
+    number: "06",
     slug: "tbml",
     name: "Trade-based money laundering",
     summary:
@@ -98,6 +103,7 @@ export const modules = [
     icon: Landmark,
   },
   {
+    number: "07",
     slug: "card-remittance",
     name: "Card and remittance monitoring",
     summary:
@@ -112,20 +118,7 @@ export const modules = [
     icon: BellRing,
   },
   {
-    slug: "case-management",
-    name: "Integrated case management",
-    summary:
-      "A connected investigation record across AML, compliance and fraud alerts.",
-    details:
-      "Investigators can consolidate alerts, review customer context, map related parties, manage requests for information and retain approval history.",
-    features: [
-      "Alert and case integration",
-      "Related-party identification",
-      "Second-level approval",
-    ],
-    icon: FileSearch,
-  },
-  {
+    number: "09",
     slug: "fatca",
     name: "FATCA",
     summary:
@@ -140,6 +133,7 @@ export const modules = [
     icon: ShieldCheck,
   },
   {
+    number: "10",
     slug: "inquiry",
     name: "Inquiry management",
     summary:
@@ -154,6 +148,7 @@ export const modules = [
     icon: Binoculars,
   },
   {
+    number: "11",
     slug: "assessment",
     name: "Assessment and BB reporting",
     summary:
@@ -168,6 +163,7 @@ export const modules = [
     icon: Waypoints,
   },
   {
+    number: "12",
     slug: "reporting",
     name: "Dashboards and reporting",
     summary:
