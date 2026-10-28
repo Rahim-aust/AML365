@@ -24,6 +24,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: #fff;
   color: #0a1d3b;
   font-family: var(--font-sans);
