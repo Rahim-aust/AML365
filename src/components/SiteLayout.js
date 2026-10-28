@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, ArrowUpRight, Mail, Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
+import { PAGE_LOADER_EVENT } from "./PageLoader.js";
 
 const links = [
   ["Overview", "/#overview"],
@@ -14,6 +15,11 @@ export function Logo({ compact = false }) {
   return (
     <Link
       to="/"
+      onClick={
+        compact
+          ? undefined
+          : () => window.dispatchEvent(new Event(PAGE_LOADER_EVENT))
+      }
       className="focus-ring inline-flex items-center"
       aria-label="AML365 home"
     >

@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
 
+export const PAGE_LOADER_EVENT = "aml365:show-loader";
+
 export function PageLoader() {
   const [visible, setVisible] = useState(true);
   const [exiting, setExiting] = useState(false);
+  const [runId, setRunId] = useState(0);
+
+  useEffect(() => {
+    const replay = () => setRunId((current) => current + 1);
+    window.addEventListener(PAGE_LOADER_EVENT, replay);
+    return () => window.removeEventListener(PAGE_LOADER_EVENT, replay);
+  }, []);
 
   useEffect(() => {
     const startedAt = performance.now();
@@ -16,6 +25,8 @@ export function PageLoader() {
     let finished = false;
 
     document.body.classList.add("page-loading");
+    setVisible(true);
+    setExiting(false);
 
     const finish = () => {
       if (finished) return;
@@ -32,7 +43,7 @@ export function PageLoader() {
       }, wait);
     };
 
-    if (document.readyState === "complete") finish();
+    if (runId > 0 || document.readyState === "complete") finish();
     else window.addEventListener("load", finish, { once: true });
 
     fallbackTimer = window.setTimeout(finish, 2000);
@@ -44,7 +55,7 @@ export function PageLoader() {
       window.clearTimeout(fallbackTimer);
       document.body.classList.remove("page-loading");
     };
-  }, []);
+  }, [runId]);
 
   if (!visible) return null;
 
