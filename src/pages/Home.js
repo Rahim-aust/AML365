@@ -397,45 +397,109 @@ function Capability({ item, reverse }) {
 }
 
 function Roadmap() {
+  const themes = [
+    {
+      title: "Screening intelligence",
+      icon: ShieldCheck,
+      items: [roadmap[0], roadmap[7]],
+    },
+    {
+      title: "Risk intelligence",
+      icon: Gauge,
+      items: [roadmap[1], roadmap[4]],
+    },
+    {
+      title: "Alert optimisation",
+      icon: Settings2,
+      items: [roadmap[2], roadmap[3]],
+    },
+    {
+      title: "Relationship and pattern analysis",
+      icon: Layers3,
+      items: [roadmap[5], roadmap[6]],
+    },
+  ];
+
   return (
     <section
       id="roadmap"
-      className="section-pad scroll-mt-24 bg-navy-950 text-white"
+      className="relative scroll-mt-24 overflow-hidden bg-navy-950 py-16 text-white sm:py-20 lg:py-24"
     >
-      <div className="site-container">
-        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+      <div
+        className="pointer-events-none absolute -right-32 top-12 h-96 w-96 rounded-full bg-brand-600/15 blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -left-48 bottom-0 h-80 w-80 rounded-full bg-sky-400/10 blur-3xl"
+        aria-hidden="true"
+      />
+      <div className="site-container relative grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
+        <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHeading
             eyebrow="AI and machine learning"
-            title="Planned capabilities on the product roadmap"
-            copy="These capabilities are planned roadmap items and are not currently presented as generally available AML365 features."
+            title="A focused roadmap for intelligent compliance operations"
+            copy="The roadmap explores how machine-assisted analysis could support screening, customer risk, alert review and relationship discovery."
             light
           />
-          <span
-            className="meta-label inline-flex self-start rounded-full border border-blue-300/30 bg-blue-400/10 px-4 py-2 text-blue-200"
-            data-reveal
+          <div
+            className="mt-8 rounded-2xl border border-blue-300/20 bg-blue-400/[.08] p-5"
+            data-reveal="left"
           >
-            <Sparkles size={14} className="mr-2" /> Roadmap / planned
-          </span>
-        </div>
-        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2">
-          {roadmap.map(([title, copy], index) => (
-            <article
-              key={title}
-              className="bg-navy-900 p-7"
-              data-reveal
-              style={{ "--reveal-delay": `${(index % 2) * 70}ms` }}
-            >
-              <div className="flex items-center gap-4">
-                <span className="meta-label text-blue-300">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-semibold">{title}</h3>
+            <div className="flex items-center gap-3 text-blue-200">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-blue-400/10">
+                <Sparkles size={19} aria-hidden="true" />
+              </span>
+              <div>
+                <p className="meta-label text-blue-200">Availability</p>
+                <p className="mt-1 font-semibold text-white">
+                  Roadmap / planned
+                </p>
               </div>
-              <p className="mt-4 pl-9 text-sm leading-6 text-blue-100/65">
-                {copy}
-              </p>
-            </article>
-          ))}
+            </div>
+            <p className="mt-4 text-sm leading-6 text-blue-100/65">
+              These capabilities are not currently presented as generally
+              available AML365 features. Release sequencing and dates are not
+              stated on this page.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          {themes.map((theme, index) => {
+            const Icon = theme.icon;
+            return (
+              <article
+                key={theme.title}
+                className="rounded-2xl border border-white/10 bg-white/[.045] p-6 backdrop-blur-sm sm:p-7"
+                data-reveal
+                style={{ "--reveal-delay": `${(index % 2) * 70}ms` }}
+              >
+                <div className="flex items-center gap-4 border-b border-white/10 pb-5">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white shadow-lg shadow-blue-950/25">
+                    <Icon size={20} aria-hidden="true" />
+                  </span>
+                  <h3 className="text-lg font-semibold leading-snug text-white">
+                    {theme.title}
+                  </h3>
+                </div>
+                <div className="divide-y divide-white/10">
+                  {theme.items.map(([title, copy]) => (
+                    <div key={title} className="py-5 last:pb-0">
+                      <span className="meta-label inline-flex rounded-full bg-blue-400/10 px-2.5 py-1 text-blue-200">
+                        Planned
+                      </span>
+                      <h4 className="mt-3 font-semibold leading-6 text-white">
+                        {title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-6 text-blue-100/60">
+                        {copy}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
