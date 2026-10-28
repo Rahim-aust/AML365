@@ -118,7 +118,7 @@ export const modules = [
     icon: BellRing,
   },
   {
-    number: "09",
+    number: "08",
     slug: "fatca",
     name: "FATCA",
     summary:
@@ -133,7 +133,7 @@ export const modules = [
     icon: ShieldCheck,
   },
   {
-    number: "10",
+    number: "09",
     slug: "inquiry",
     name: "Inquiry management",
     summary:
@@ -148,7 +148,7 @@ export const modules = [
     icon: Binoculars,
   },
   {
-    number: "11",
+    number: "10",
     slug: "assessment",
     name: "Assessment and BB reporting",
     summary:
@@ -163,7 +163,7 @@ export const modules = [
     icon: Waypoints,
   },
   {
-    number: "12",
+    number: "11",
     slug: "reporting",
     name: "Dashboards and reporting",
     summary:
