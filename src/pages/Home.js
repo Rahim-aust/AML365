@@ -331,10 +331,16 @@ function Capability({ item, reverse }) {
     >
       <div className="site-container grid items-center gap-14 lg:grid-cols-2">
         <div className={reverse ? "lg:order-2" : ""}>
-          <p className="eyebrow">{item.eyebrow}</p>
-          <h2 className="section-title mt-4 text-navy-950">
-            {item.title}
+          <h2 className="flex items-center gap-3 text-xl font-semibold tracking-[-0.015em] text-brand-700 sm:text-2xl">
+            <span
+              className="h-7 w-1 rounded-full bg-brand-500"
+              aria-hidden="true"
+            />
+            {item.eyebrow}
           </h2>
+          <h3 className="section-title mt-4 text-navy-950">
+            {item.title}
+          </h3>
           <p className="lead-copy mt-5 text-slate-600">{item.copy}</p>
           <ul className="mt-8 space-y-4">
             {item.points.map((point) => (
