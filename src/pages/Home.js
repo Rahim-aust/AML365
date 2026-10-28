@@ -229,7 +229,7 @@ function Overview() {
           eyebrow="Product overview"
           title="One operating environment across the AML lifecycle"
         />
-        <div>
+        <div data-reveal="right">
           <p className="lead-copy font-semibold text-navy-900">
             AML365 brings separate compliance activities into a consistent
             workflow while preserving the controls and responsibilities each
@@ -272,6 +272,7 @@ function Modules() {
             />
             <Link
               to="/solutions"
+              data-reveal
               aria-label="View the complete AML365 module portfolio"
               className="focus-ring group flex min-h-16 w-full items-center justify-between gap-5 rounded-2xl bg-navy-950 px-5 py-4 text-white shadow-lg shadow-blue-950/10 transition hover:bg-brand-700 sm:w-auto sm:min-w-72 lg:mb-1"
             >
@@ -294,6 +295,8 @@ function Modules() {
               return (
                 <article
                   key={module.slug}
+                  data-reveal
+                  style={{ "--reveal-delay": `${(index % 3) * 70}ms` }}
                   className="group flex min-h-full flex-col rounded-2xl border border-blue-100 bg-white p-5 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/5 sm:p-6"
                 >
                   <div className="flex items-center justify-between">
@@ -336,7 +339,10 @@ function Capability({ item, reverse }) {
       className={`section-pad scroll-mt-24 ${reverse ? "bg-skysoft-50" : "bg-white"}`}
     >
       <div className="site-container grid items-center gap-14 lg:grid-cols-2">
-        <div className={reverse ? "lg:order-2" : ""}>
+        <div
+          className={reverse ? "lg:order-2" : ""}
+          data-reveal={reverse ? "right" : "left"}
+        >
           <h2 className="flex items-center gap-3 text-xl font-semibold tracking-[-0.015em] text-brand-700 sm:text-2xl">
             <span
               className="h-7 w-1 rounded-full bg-brand-500"
@@ -362,7 +368,10 @@ function Capability({ item, reverse }) {
             ))}
           </ul>
         </div>
-        <div className={`relative ${reverse ? "lg:order-1" : ""}`}>
+        <div
+          className={`relative ${reverse ? "lg:order-1" : ""}`}
+          data-reveal={reverse ? "left" : "right"}
+        >
           <div className="absolute -inset-4 rounded-[2rem] bg-blue-100/60 blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl shadow-blue-950/10">
             <div className="mb-4 flex items-center gap-2">
@@ -400,13 +409,21 @@ function Roadmap() {
             copy="These capabilities are planned roadmap items and are not currently presented as generally available AML365 features."
             light
           />
-          <span className="meta-label inline-flex self-start rounded-full border border-blue-300/30 bg-blue-400/10 px-4 py-2 text-blue-200">
+          <span
+            className="meta-label inline-flex self-start rounded-full border border-blue-300/30 bg-blue-400/10 px-4 py-2 text-blue-200"
+            data-reveal
+          >
             <Sparkles size={14} className="mr-2" /> Roadmap / planned
           </span>
         </div>
         <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2">
           {roadmap.map(([title, copy], index) => (
-            <article key={title} className="bg-navy-900 p-7">
+            <article
+              key={title}
+              className="bg-navy-900 p-7"
+              data-reveal
+              style={{ "--reveal-delay": `${(index % 2) * 70}ms` }}
+            >
               <div className="flex items-center gap-4">
                 <span className="meta-label text-blue-300">
                   {String(index + 1).padStart(2, "0")}
@@ -434,7 +451,10 @@ function Dashboards() {
           copy="Dashboard views support alert status, aging, customer review, profiling and relationship analysis. Export formats include Excel, PDF and JPEG."
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-[1.35fr_.65fr]">
-          <figure className="rounded-3xl border border-slate-200 bg-skysoft-50 p-5">
+          <figure
+            className="rounded-3xl border border-slate-200 bg-skysoft-50 p-5"
+            data-reveal="left"
+          >
             <img
               src="/product/relationship-analysis.png"
               alt="AML365 relationship analysis view"
@@ -445,7 +465,7 @@ function Dashboards() {
               Relationship analysis
             </figcaption>
           </figure>
-          <div className="grid gap-5">
+          <div className="grid gap-5" data-reveal="right">
             <figure className="rounded-3xl border border-slate-200 p-5">
               <img
                 src="/product/customer-review.png"
@@ -524,6 +544,8 @@ function Implementation() {
           {steps.map(([number, title, copy]) => (
             <article
               key={number}
+              data-reveal
+              style={{ "--reveal-delay": `${((Number(number) - 1) % 3) * 70}ms` }}
               className="border-t-2 border-brand-600 bg-white p-7"
             >
               <span className="meta-label text-brand-600">
@@ -548,7 +570,7 @@ function Clients() {
       className="scroll-mt-24 overflow-hidden border-b border-slate-200 bg-white py-10 sm:py-12"
     >
       <div className="site-container">
-        <div>
+        <div data-reveal>
           <p className="section-label">
             <span
               className="section-label-mark bg-brand-500"
@@ -589,7 +611,7 @@ function Contact() {
   return (
     <section className="section-pad soft-grid bg-skysoft-50">
       <div className="site-container grid items-start gap-14 lg:grid-cols-[.8fr_1.2fr]">
-        <div>
+        <div data-reveal="left">
           <SectionHeading
             eyebrow="Contact"
             title="Discuss your institution’s AML priorities"

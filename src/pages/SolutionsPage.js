@@ -7,7 +7,7 @@ export function SolutionsPage() {
   return (
     <>
       <section className="blueprint-grid bg-navy-950 pt-20 text-white">
-        <div className="site-container py-16 sm:py-20">
+        <div className="site-container py-16 sm:py-20" data-reveal>
           <p className="eyebrow !text-blue-300">Solution portfolio</p>
           <h1 className="page-title mt-4 max-w-5xl">
             AML controls connected through one operating environment
@@ -34,6 +34,8 @@ export function SolutionsPage() {
                 <article
                   id={module.slug}
                   key={module.slug}
+                  data-reveal
+                  style={{ "--reveal-delay": `${(index % 2) * 60}ms` }}
                   className="scroll-mt-28 rounded-3xl border border-slate-200 p-6 sm:p-9"
                 >
                   <div className="grid gap-8 lg:grid-cols-[.65fr_1.35fr]">
@@ -75,7 +77,10 @@ export function SolutionsPage() {
               );
             })}
           </div>
-          <div className="mt-14 rounded-3xl bg-brand-600 p-8 text-white sm:p-12">
+          <div
+            className="mt-14 rounded-3xl bg-brand-600 p-8 text-white sm:p-12"
+            data-reveal
+          >
             <p className="text-2xl font-semibold leading-tight">
               Discuss the right module scope for your institution
             </p>

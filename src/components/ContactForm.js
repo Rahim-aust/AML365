@@ -54,6 +54,7 @@ export function ContactForm() {
     <form
       onSubmit={submit}
       noValidate
+      data-reveal="right"
       className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_25px_80px_rgba(6,20,43,.08)] sm:p-9"
     >
       <div className="grid gap-5 sm:grid-cols-2">

@@ -5,7 +5,10 @@ export function CareersPage() {
   return (
     <section className="soft-grid min-h-[calc(100vh-5rem)] bg-skysoft-50 pt-20">
       <div className="site-container grid min-h-[680px] place-items-center py-16">
-        <div className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-7 text-center shadow-[0_24px_70px_rgba(6,20,43,.08)] sm:p-12">
+        <div
+          className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-7 text-center shadow-[0_24px_70px_rgba(6,20,43,.08)] sm:p-12"
+          data-reveal
+        >
           <span className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-blue-50 text-brand-700">
             <BriefcaseBusiness size={26} />
           </span>

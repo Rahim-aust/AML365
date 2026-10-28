@@ -1,6 +1,6 @@
 export function SectionHeading({ eyebrow, title, copy, light = false }) {
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-3xl" data-reveal>
       <p className={`section-label ${light ? "!text-blue-300" : ""}`}>
         <span
           className={`section-label-mark ${light ? "bg-blue-300" : "bg-brand-500"}`}

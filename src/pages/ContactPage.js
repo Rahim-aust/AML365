@@ -5,7 +5,7 @@ export function ContactPage() {
   return (
     <section className="soft-grid min-h-screen bg-skysoft-50 pt-20">
       <div className="site-container grid gap-12 py-16 lg:grid-cols-[.75fr_1.25fr] lg:py-20">
-        <div>
+        <div data-reveal="left">
           <p className="eyebrow">Contact AML365</p>
           <h1 className="page-title mt-4 text-navy-950">
             A focused conversation about your AML priorities
