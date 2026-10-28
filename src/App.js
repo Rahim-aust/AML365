@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { SiteLayout } from "./components/SiteLayout.js";
 import { MotionEffects } from "./components/MotionEffects.js";
+import { PageLoader } from "./components/PageLoader.js";
 import { ContactPage } from "./pages/ContactPage.js";
 import { CareersPage } from "./pages/CareersPage.js";
 import { HomePage } from "./pages/Home.js";
@@ -34,16 +35,19 @@ function RouteEffects() {
 
 export default function AppRoot() {
   return (
-    <SiteLayout>
-      <RouteEffects />
-      <MotionEffects />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/solutions" element={<SolutionsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/careers" element={<CareersPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </SiteLayout>
+    <>
+      <PageLoader />
+      <SiteLayout>
+        <RouteEffects />
+        <MotionEffects />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </SiteLayout>
+    </>
   );
 }
