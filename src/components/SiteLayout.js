@@ -36,32 +36,41 @@ export function SiteLayout({ children }) {
       >
         Skip to content
       </a>
-      <header className="glass fixed inset-x-0 top-0 z-50 border-b border-slate-200/80">
-        <div className="site-container flex h-20 items-center justify-between">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-[0_1px_16px_rgba(6,20,43,.05)] backdrop-blur-xl">
+        <div
+          className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-brand-700 via-brand-500 to-sky-400"
+          aria-hidden="true"
+        />
+        <div className="site-container flex h-[4.75rem] items-center justify-between">
           <Logo />
           <nav
-            className="hidden items-center gap-7 lg:flex"
+            className="hidden items-center gap-1 lg:flex"
             aria-label="Primary navigation"
           >
             {links.map(([label, to]) => (
               <NavLink
                 key={label}
                 to={to}
-                className="focus-ring text-sm font-semibold text-slate-600 transition hover:text-brand-600"
+                className="focus-ring rounded-full px-3.5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-skysoft-50 hover:text-brand-700"
               >
                 {label}
               </NavLink>
             ))}
+            <span
+              className="mx-2 h-6 w-px bg-slate-200"
+              aria-hidden="true"
+            />
             <Link
               to="/contact"
-              className="focus-ring rounded-full bg-navy-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-700"
+              className="focus-ring inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-brand-700"
             >
               Request a consultation
+              <ArrowUpRight size={15} aria-hidden="true" />
             </Link>
           </nav>
           <button
             type="button"
-            className="focus-ring rounded-lg p-2 text-navy-950 lg:hidden"
+            className="focus-ring rounded-xl border border-slate-200 bg-white p-2.5 text-navy-950 shadow-sm transition hover:bg-skysoft-50 lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen(!open)}
@@ -71,16 +80,16 @@ export function SiteLayout({ children }) {
         </div>
         {open && (
           <nav
-            className="border-t border-slate-200 bg-white px-4 py-5 lg:hidden"
+            className="absolute inset-x-0 top-full border-y border-slate-200 bg-white/98 px-4 py-4 shadow-2xl shadow-blue-950/10 backdrop-blur-xl lg:hidden"
             aria-label="Mobile navigation"
           >
-            <div className="site-container flex flex-col gap-1">
+            <div className="site-container flex flex-col gap-1.5">
               {links.map(([label, to]) => (
                 <Link
                   key={label}
                   to={to}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-3 font-semibold text-navy-900 hover:bg-skysoft-50"
+                  className="focus-ring rounded-xl px-4 py-3 font-semibold text-navy-900 transition hover:bg-skysoft-50 hover:text-brand-700"
                 >
                   {label}
                 </Link>
@@ -88,7 +97,7 @@ export function SiteLayout({ children }) {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-lg bg-navy-950 px-4 py-3 text-center font-bold text-white"
+                className="focus-ring mt-2 rounded-xl bg-brand-600 px-4 py-3.5 text-center font-bold text-white shadow-sm transition hover:bg-brand-700"
               >
                 Request a consultation
               </Link>
