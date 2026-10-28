@@ -42,10 +42,15 @@ The optimized static build is generated in `dist/`.
 - `/contact` — validated business enquiry form
 - `/careers` — current recruitment status
 
+## Documentation
+
+- [Direct contact-form email delivery](docs/direct-email-submission.md) — future Vercel Function and Resend implementation, configuration, testing, security and rollback.
+
 ## Project structure
 
 ```text
 public/                 Static images, product screenshots and client logos
+docs/                   Implementation and maintenance guides
 src/components/         Reusable interface components
 src/data/               Product and module content
 src/pages/              Route-level pages
