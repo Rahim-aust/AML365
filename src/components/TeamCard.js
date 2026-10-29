@@ -11,7 +11,7 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
       className={`group overflow-hidden border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/[.07] ${featured ? "rounded-3xl" : "rounded-2xl"}`}
     >
       <div
-        className={`relative overflow-hidden bg-gradient-to-br from-blue-50 via-skysoft-50 to-blue-100 ${featured ? "aspect-[16/10]" : "aspect-[4/3]"}`}
+        className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-50 via-skysoft-50 to-blue-100"
       >
         {showImage ? (
           <img

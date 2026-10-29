@@ -52,7 +52,7 @@ export const teamGroups = [
       {
         name: "Mafuj Ahammad Pranto",
         title: "Software Developer",
-        image: null,
+        image: "/teams/Mafuj_Ahammad_Pranto.jpg",
       },
     ],
   },
@@ -84,7 +84,7 @@ export const teamGroups = [
       {
         name: "Aunik Hasan Mridul",
         title: "Software Developer (QA & AI)",
-        image: null,
+        image: "/teams/Aunik_Hasan_Mridul.jpg",
       },
     ],
   },
