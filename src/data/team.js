@@ -5,14 +5,14 @@ export const leadership = [
     phone: "01799424354",
     email: "manjur@datasoft-bd.com",
     linkedin: "https://www.linkedin.com/in/m-manjur-mahmud/",
-    image: null,
+    image: "/teams/Manjur_Mahmud.jpg",
   },
   {
     name: "Kabita Rani Roy",
     title: "Senior Project Manager",
     phone: "01850611327",
     email: "kabita.roy@datasoft-bd.com",
-    image: null,
+    image: "/teams/Kabita_Rani_Roy.jpg",
   },
 ];
 
@@ -26,7 +26,7 @@ export const teamGroups = [
         title: "Head of Business Development",
         phone: "01711507013",
         email: "shafiqul.islam@datasoft-bd.com",
-        image: null,
+        image: "/teams/Md_Shofiqul_Islam.jpg",
       },
     ],
   },
@@ -37,12 +37,12 @@ export const teamGroups = [
       {
         name: "S M Saiful Haque",
         title: "Senior Database Engineer",
-        image: null,
+        image: "/teams/S_M_Saiful_Haque.jpg",
       },
       {
         name: "Md. Rakib Hosen",
         title: "Software Engineer",
-        image: null,
+        image: "/teams/Md_Rakib_Hosen.jpg",
       },
       {
         name: "Abdur Rahim",
@@ -63,17 +63,17 @@ export const teamGroups = [
       {
         name: "King Kobir",
         title: "Assistant Manager (Implementation)",
-        image: null,
+        image: "/teams/King_Kobir.jpg",
       },
       {
         name: "S. A. Q. Alasad Parvez",
         title: "Senior Implementation Engineer",
-        image: null,
+        image: "/teams/S_A_Q_Alasad_Parvez.jpg",
       },
       {
         name: "Jahan Islam",
         title: "Implementation Engineer",
-        image: null,
+        image: "/teams/Jahan_Islam.jpg",
       },
     ],
   },
