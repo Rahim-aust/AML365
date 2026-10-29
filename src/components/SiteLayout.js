@@ -162,6 +162,7 @@ export function SiteLayout({ children }) {
             <FooterGroup title="Explore">
               <Link to="/#implementation">Implementation</Link>
               <Link to="/#clients">Banking clients</Link>
+              <Link to="/team">AML365 team</Link>
               <Link to="/careers">Careers</Link>
             </FooterGroup>
 
