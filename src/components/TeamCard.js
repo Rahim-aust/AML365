@@ -8,17 +8,18 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
 
   return (
     <article
-      className={`group overflow-hidden border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/[.07] ${featured ? "rounded-3xl" : "rounded-2xl"}`}
+      className={`group h-full overflow-hidden border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/[.07] ${featured ? "rounded-3xl sm:grid sm:grid-cols-[minmax(12rem,.85fr)_minmax(0,1.15fr)]" : "rounded-2xl"}`}
     >
       <div
-        className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-50 via-skysoft-50 to-blue-100"
+        className="relative aspect-[4/5] w-full self-start overflow-hidden bg-gradient-to-br from-blue-50 via-skysoft-50 to-blue-100"
       >
         {showImage ? (
           <img
             src={member.image}
             alt={`${member.name}, ${member.title}`}
             className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.025]"
-            loading="lazy"
+            loading={featured ? "eager" : "lazy"}
+            decoding="async"
             onError={() => setImageError(true)}
           />
         ) : (
@@ -43,7 +44,13 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
         )}
       </div>
 
-      <div className={featured ? "p-6 sm:p-7" : "p-5 sm:p-6"}>
+      <div
+        className={
+          featured
+            ? "flex flex-col justify-center p-6 sm:p-7"
+            : "p-5 sm:p-6"
+        }
+      >
         <Heading
           className={`${featured ? "text-2xl" : "text-xl"} font-semibold leading-tight tracking-[-0.02em] text-navy-950`}
         >
