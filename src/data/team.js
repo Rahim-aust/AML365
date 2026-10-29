@@ -6,8 +6,6 @@ export const leadership = [
     email: "manjur@datasoft-bd.com",
     linkedin: "https://www.linkedin.com/in/m-manjur-mahmud/",
     image: "/teams/Manjur_Mahmud.jpg",
-    portraitScale: 1.45,
-    portraitOrigin: "58% 28%",
   },
   {
     name: "Kabita Rani Roy",
@@ -15,8 +13,6 @@ export const leadership = [
     phone: "01850611327",
     email: "kabita.roy@datasoft-bd.com",
     image: "/teams/Kabita_Rani_Roy.jpg",
-    portraitScale: 1.2,
-    portraitOrigin: "54% 28%",
   },
 ];
 
@@ -57,8 +53,6 @@ export const teamGroups = [
         name: "Mafuj Ahammad Pranto",
         title: "Software Developer",
         image: "/teams/Mafuj_Ahammad_Pranto.jpg",
-        portraitScale: 1.55,
-        portraitOrigin: "54% 22%",
       },
     ],
   },
@@ -70,15 +64,11 @@ export const teamGroups = [
         name: "King Kobir",
         title: "Assistant Manager (Implementation)",
         image: "/teams/King_Kobir.jpg",
-        portraitScale: 1.75,
-        portraitOrigin: "53% 23%",
       },
       {
         name: "S. A. Q. Alasad Parvez",
         title: "Senior Implementation Engineer",
         image: "/teams/S_A_Q_Alasad_Parvez.jpg",
-        portraitScale: 1.15,
-        portraitOrigin: "53% 30%",
       },
       {
         name: "Jahan Islam",

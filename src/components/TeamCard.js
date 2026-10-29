@@ -7,19 +7,15 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
   const Heading = headingLevel;
 
   return (
-    <article className="group mx-auto w-32 text-center sm:w-40">
+    <article className="group mx-auto w-full max-w-[17rem] text-center">
       <div
-        className="mx-auto aspect-square w-28 overflow-hidden rounded-full bg-white ring-2 ring-blue-100 transition duration-300 group-hover:-translate-y-1 group-hover:ring-brand-500 group-hover:shadow-lg group-hover:shadow-blue-950/10 sm:w-32"
+        className="aspect-[4/5] w-full overflow-hidden rounded-xl border border-blue-100 bg-white transition duration-300 group-hover:-translate-y-1 group-hover:border-blue-300 group-hover:shadow-xl group-hover:shadow-blue-950/10"
       >
         {showImage ? (
           <img
             src={member.image}
             alt={`${member.name}, ${member.title}`}
             className="h-full w-full object-cover object-center transition-[filter] duration-300 group-hover:brightness-[1.03]"
-            style={{
-              transform: `scale(${member.portraitScale ?? 1})`,
-              transformOrigin: member.portraitOrigin ?? "50% 50%",
-            }}
             loading={featured ? "eager" : "lazy"}
             decoding="async"
             onError={() => setImageError(true)}
@@ -30,7 +26,7 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
             role="img"
             aria-label={`Photograph placeholder for ${member.name}`}
           >
-            <span className="grid h-16 w-16 place-items-center rounded-full bg-white sm:h-20 sm:w-20">
+            <span className="grid h-20 w-20 place-items-center rounded-full bg-white sm:h-24 sm:w-24">
               <UserRound
                 size={32}
                 strokeWidth={1.35}
@@ -42,12 +38,10 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
       </div>
 
       <div className="pt-4">
-        <Heading
-          className="text-sm font-semibold leading-5 text-navy-950 transition-colors duration-300 group-hover:text-brand-700 sm:text-base"
-        >
+        <Heading className="text-base font-semibold leading-6 text-navy-950 transition-colors duration-300 group-hover:text-brand-700 sm:text-lg">
           {member.name}
         </Heading>
-        <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
+        <p className="mt-1 text-sm font-medium leading-5 text-brand-700">
           {member.title}
         </p>
         {(member.phone || member.email || member.linkedin) && (
