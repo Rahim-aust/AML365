@@ -8,16 +8,16 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
 
   return (
     <article
-      className={`group h-full overflow-hidden border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/[.07] ${featured ? "rounded-3xl sm:grid sm:grid-cols-[minmax(12rem,.85fr)_minmax(0,1.15fr)]" : "rounded-2xl"}`}
+      className={`h-full overflow-hidden border border-slate-200 bg-white shadow-[0_1px_2px_rgba(6,20,43,.04)] transition-colors hover:border-slate-300 ${featured ? "rounded-xl sm:grid sm:grid-cols-[minmax(12rem,.85fr)_minmax(0,1.15fr)]" : "rounded-lg"}`}
     >
       <div
-        className="relative aspect-[4/5] w-full self-start overflow-hidden bg-gradient-to-br from-blue-50 via-skysoft-50 to-blue-100"
+        className="relative aspect-[4/5] w-full self-start overflow-hidden bg-slate-100"
       >
         {showImage ? (
           <img
             src={member.image}
             alt={`${member.name}, ${member.title}`}
-            className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.025]"
+            className="h-full w-full object-cover object-center"
             loading={featured ? "eager" : "lazy"}
             decoding="async"
             onError={() => setImageError(true)}
@@ -36,11 +36,6 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
               />
             </span>
           </div>
-        )}
-        {featured && (
-          <span className="meta-label absolute left-5 top-5 rounded-full border border-white/70 bg-white/90 px-3 py-1.5 text-brand-700 shadow-sm backdrop-blur">
-            Leadership
-          </span>
         )}
       </div>
 
