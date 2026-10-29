@@ -2,11 +2,16 @@ export const leadership = [
   {
     name: "Manjur Mahmud",
     title: "President",
+    phone: "1799424354",
+    email: "manjur@datasoft-bd.com",
+    linkedin: "https://www.linkedin.com/in/m-manjur-mahmud/",
     image: null,
   },
   {
     name: "Kabita Rani Roy",
     title: "Senior Project Manager",
+    phone: "1850611327",
+    email: "kabita.roy@datasoft-bd.com",
     image: null,
   },
 ];
@@ -19,6 +24,8 @@ export const teamGroups = [
       {
         name: "Md. Shofiqul Islam",
         title: "Head of Business Development",
+        phone: "1711507013",
+        email: "shafiqul.islam@datasoft-bd.com",
         image: null,
       },
     ],

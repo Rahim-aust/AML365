@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UserRound } from "lucide-react";
+import { Linkedin, Mail, Phone, UserRound } from "lucide-react";
 
 export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
   const [imageError, setImageError] = useState(false);
@@ -52,6 +52,42 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
         <p className="mt-2 text-sm font-semibold leading-6 text-brand-700">
           {member.title}
         </p>
+        {(member.phone || member.email || member.linkedin) && (
+          <div className="mt-5 space-y-2 border-t border-slate-200 pt-4">
+            {member.phone && (
+              <a
+                href={`tel:${member.phone}`}
+                className="focus-ring flex w-fit items-center gap-2 rounded text-sm font-medium text-slate-600 transition hover:text-brand-700"
+                aria-label={`Call ${member.name} at ${member.phone}`}
+              >
+                <Phone size={15} aria-hidden="true" />
+                {member.phone}
+              </a>
+            )}
+            {member.email && (
+              <a
+                href={`mailto:${member.email}`}
+                className="focus-ring flex w-fit items-center gap-2 rounded text-sm font-medium text-slate-600 transition hover:text-brand-700"
+                aria-label={`Email ${member.name} at ${member.email}`}
+              >
+                <Mail size={15} aria-hidden="true" />
+                <span className="break-all">{member.email}</span>
+              </a>
+            )}
+            {member.linkedin && (
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring flex w-fit items-center gap-2 rounded text-sm font-medium text-slate-600 transition hover:text-brand-700"
+                aria-label={`View ${member.name} on LinkedIn`}
+              >
+                <Linkedin size={15} aria-hidden="true" />
+                LinkedIn
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );
