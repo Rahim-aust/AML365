@@ -6,13 +6,14 @@ export function TeamSection() {
     <section
       id="team"
       aria-label="AML365 team directory"
-      className="section-pad scroll-mt-24 bg-white"
+      className="section-pad scroll-mt-24 bg-skysoft-50/40"
     >
       <div className="site-container mx-auto max-w-6xl">
         <section aria-labelledby="leadership-heading">
           <h2
             id="leadership-heading"
             className="text-center text-lg font-semibold text-navy-950"
+            data-reveal
           >
             Leadership
           </h2>
@@ -33,11 +34,12 @@ export function TeamSection() {
           <section
             key={group.id}
             aria-labelledby={`${group.id}-heading`}
-            className="mt-14 border-t border-slate-200 pt-10 sm:mt-16 sm:pt-12"
+            className="mt-14 border-t border-blue-100 pt-10 sm:mt-16 sm:pt-12"
           >
             <h3
               id={`${group.id}-heading`}
               className="text-center text-lg font-semibold text-navy-950"
+              data-reveal
             >
               {group.title}
             </h3>
