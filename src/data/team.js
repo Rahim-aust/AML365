@@ -47,7 +47,7 @@ export const teamGroups = [
       {
         name: "Abdur Rahim",
         title: "Software Developer",
-        image: null,
+        image: "/teams/Abdur_Rahim.jpg",
       },
       {
         name: "Mafuj Ahammad Pranto",
