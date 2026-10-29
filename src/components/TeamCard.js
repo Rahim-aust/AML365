@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { UserRound } from "lucide-react";
 
-export function TeamCard({ member, featured = false }) {
+export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
   const [imageError, setImageError] = useState(false);
   const showImage = member.image && !imageError;
-  const Heading = featured ? "h3" : "h4";
+  const Heading = headingLevel;
 
   return (
     <article
