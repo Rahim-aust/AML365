@@ -8,21 +8,18 @@ export function TeamSection() {
       aria-label="AML365 team directory"
       className="section-pad scroll-mt-24 bg-white"
     >
-      <div className="site-container mx-auto max-w-7xl">
+      <div className="site-container mx-auto max-w-6xl">
         <section aria-labelledby="leadership-heading">
-          <div className="border-b border-slate-200 pb-4">
-            <h2
-              id="leadership-heading"
-              className="text-2xl font-semibold tracking-[-0.025em] text-navy-950 sm:text-3xl"
-            >
-              Leadership
-            </h2>
-          </div>
-          <div className="mt-6 grid gap-5 lg:grid-cols-2 lg:gap-6">
+          <h2
+            id="leadership-heading"
+            className="text-center text-lg font-semibold text-navy-950"
+          >
+            Leadership
+          </h2>
+          <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-10 sm:gap-x-12">
             {leadership.map((member, index) => (
               <div
                 key={member.name}
-                className="h-full"
                 data-reveal
                 style={{ "--reveal-delay": `${index * 70}ms` }}
               >
@@ -36,17 +33,21 @@ export function TeamSection() {
           <section
             key={group.id}
             aria-labelledby={`${group.id}-heading`}
-            className="mt-12 border-t border-slate-200 pt-9 sm:mt-14 sm:pt-10"
+            className="mt-14 border-t border-slate-200 pt-10 sm:mt-16 sm:pt-12"
           >
             <h3
               id={`${group.id}-heading`}
-              className="text-xl font-semibold tracking-[-0.02em] text-navy-950 sm:text-2xl"
+              className="text-center text-lg font-semibold text-navy-950"
             >
               {group.title}
             </h3>
-            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {group.members.map((member) => (
-                <div key={member.name} className="h-full" data-reveal>
+            <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-10 sm:gap-x-12">
+              {group.members.map((member, index) => (
+                <div
+                  key={member.name}
+                  data-reveal
+                  style={{ "--reveal-delay": `${index * 60}ms` }}
+                >
                   <TeamCard member={member} headingLevel="h4" />
                 </div>
               ))}

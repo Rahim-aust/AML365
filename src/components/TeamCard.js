@@ -7,17 +7,19 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
   const Heading = headingLevel;
 
   return (
-    <article
-      className={`h-full overflow-hidden border border-slate-200 bg-white shadow-[0_1px_2px_rgba(6,20,43,.04)] transition-colors hover:border-slate-300 ${featured ? "rounded-xl sm:grid sm:grid-cols-[minmax(12rem,.85fr)_minmax(0,1.15fr)]" : "rounded-lg"}`}
-    >
+    <article className="mx-auto w-32 text-center sm:w-40">
       <div
-        className="relative aspect-[4/5] w-full self-start overflow-hidden bg-slate-100"
+        className="mx-auto aspect-square w-28 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200 sm:w-32"
       >
         {showImage ? (
           <img
             src={member.image}
             alt={`${member.name}, ${member.title}`}
             className="h-full w-full object-cover object-center"
+            style={{
+              transform: `scale(${member.portraitScale ?? 1})`,
+              transformOrigin: member.portraitOrigin ?? "50% 50%",
+            }}
             loading={featured ? "eager" : "lazy"}
             decoding="async"
             onError={() => setImageError(true)}
@@ -28,9 +30,9 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
             role="img"
             aria-label={`Photograph placeholder for ${member.name}`}
           >
-            <span className="grid h-20 w-20 place-items-center rounded-full border border-blue-200 bg-white/80 shadow-sm sm:h-24 sm:w-24">
+            <span className="grid h-16 w-16 place-items-center rounded-full bg-white sm:h-20 sm:w-20">
               <UserRound
-                size={featured ? 42 : 36}
+                size={32}
                 strokeWidth={1.35}
                 aria-hidden="true"
               />
@@ -39,40 +41,34 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
         )}
       </div>
 
-      <div
-        className={
-          featured
-            ? "flex flex-col justify-center p-6 sm:p-7"
-            : "p-5 sm:p-6"
-        }
-      >
+      <div className="pt-4">
         <Heading
-          className={`${featured ? "text-2xl" : "text-xl"} font-semibold leading-tight tracking-[-0.02em] text-navy-950`}
+          className="text-sm font-semibold leading-5 text-navy-950 sm:text-base"
         >
           {member.name}
         </Heading>
-        <p className="mt-2 text-sm font-semibold leading-6 text-brand-700">
+        <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
           {member.title}
         </p>
         {(member.phone || member.email || member.linkedin) && (
-          <div className="mt-5 space-y-2 border-t border-slate-200 pt-4">
+          <div className="mt-2 space-y-1 text-xs leading-5 text-slate-500">
             {member.phone && (
               <a
                 href={`tel:${member.phone}`}
-                className="focus-ring flex w-fit items-center gap-2 rounded text-sm font-medium text-slate-600 transition hover:text-brand-700"
+                className="focus-ring mx-auto flex w-fit items-center gap-1.5 rounded transition hover:text-brand-700"
                 aria-label={`Call ${member.name} at ${member.phone}`}
               >
-                <Phone size={15} aria-hidden="true" />
+                <Phone size={12} aria-hidden="true" />
                 {member.phone}
               </a>
             )}
             {member.email && (
               <a
                 href={`mailto:${member.email}`}
-                className="focus-ring flex w-fit items-center gap-2 rounded text-sm font-medium text-slate-600 transition hover:text-brand-700"
+                className="focus-ring mx-auto flex w-fit max-w-full items-start gap-1.5 rounded transition hover:text-brand-700"
                 aria-label={`Email ${member.name} at ${member.email}`}
               >
-                <Mail size={15} aria-hidden="true" />
+                <Mail className="mt-1 shrink-0" size={12} aria-hidden="true" />
                 <span className="break-all">{member.email}</span>
               </a>
             )}
@@ -81,10 +77,10 @@ export function TeamCard({ member, featured = false, headingLevel = "h3" }) {
                 href={member.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="focus-ring flex w-fit items-center gap-2 rounded text-sm font-medium text-slate-600 transition hover:text-brand-700"
+                className="focus-ring mx-auto flex w-fit items-center gap-1.5 rounded transition hover:text-brand-700"
                 aria-label={`View ${member.name} on LinkedIn`}
               >
-                <Linkedin size={15} aria-hidden="true" />
+                <Linkedin size={12} aria-hidden="true" />
                 LinkedIn
               </a>
             )}
