@@ -12,6 +12,12 @@ import {
   ShieldCheck,
   Settings2,
   Sparkles,
+  UserRoundSearch,
+  Activity,
+  Newspaper,
+  FileWarning,
+  FileCheck,
+  Network,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactForm } from "../components/ContactForm.js";
@@ -145,77 +151,217 @@ function Hero() {
   );
 }
 
+
 function AmlNetworkVisual() {
+  const controls = [
+    {
+      position: "left-0 top-[4.5rem]",
+      icon: ShieldCheck,
+      label: "Sanctions Screening",
+    },
+    {
+      position: "right-0 top-[4rem]",
+      icon: UserRoundSearch,
+      label: "KYC & CDD",
+    },
+    {
+      position: "-left-3 top-[42%]",
+      icon: Gauge,
+      label: "Customer Risk",
+    },
+    {
+      position: "-right-3 top-[42%]",
+      icon: Activity,
+      label: "Transaction Monitoring",
+    },
+    {
+      position: "left-0 bottom-[4.5rem]",
+      icon: Newspaper,
+      label: "Adverse Media",
+    },
+    {
+      position: "right-0 bottom-[4.5rem]",
+      icon: FileWarning,
+      label: "STR / SAR Management",
+    },
+    {
+      position: "left-1/2 -top-5 -translate-x-1/2",
+      icon: FileCheck,
+      label: "CTR Reporting",
+    },
+    {
+      position: "left-1/2 -bottom-5 -translate-x-1/2",
+      icon: Network,
+      label: "Alert Management",
+    },
+  ];
+
   return (
     <div
-      className="fade-up-delay relative mx-auto hidden min-h-[420px] w-full max-w-[600px] lg:block"
-      aria-label="Illustration of connected anti-money laundering controls"
+      className="fade-up-delay relative mx-auto hidden min-h-[460px] w-full max-w-[600px] lg:block"
+      aria-label="AML365 integrated compliance capabilities"
     >
       <svg
         className="absolute inset-0 h-full w-full"
-        viewBox="0 0 600 440"
+        viewBox="0 0 600 460"
         fill="none"
         aria-hidden="true"
       >
         <defs>
           <linearGradient id="aml-ring" x1="88" y1="50" x2="518" y2="394">
-            <stop stopColor="#7DD3FC" stopOpacity=".65" />
+            <stop stopColor="#7DD3FC" stopOpacity=".75" />
             <stop offset="1" stopColor="#2563EB" stopOpacity=".15" />
           </linearGradient>
+
           <radialGradient id="aml-core">
-            <stop stopColor="#2878ED" stopOpacity=".32" />
+            <stop stopColor="#2878ED" stopOpacity=".4" />
             <stop offset="1" stopColor="#2878ED" stopOpacity="0" />
           </radialGradient>
+
+          <linearGradient id="aml-line" x1="0" y1="0" x2="1" y2="1">
+            <stop stopColor="#38BDF8" />
+            <stop offset="1" stopColor="#2563EB" />
+          </linearGradient>
         </defs>
-        <circle cx="300" cy="220" r="198" stroke="url(#aml-ring)" strokeOpacity=".25" />
-        <circle cx="300" cy="220" r="150" stroke="#93C5FD" strokeOpacity=".12" strokeDasharray="5 10" />
-        <circle cx="300" cy="220" r="116" fill="url(#aml-core)" />
-        <path d="M102 130C172 102 217 145 275 196" stroke="#60A5FA" strokeOpacity=".48" strokeWidth="1.5" />
-        <path d="M498 116C426 107 384 151 329 198" stroke="#60A5FA" strokeOpacity=".48" strokeWidth="1.5" />
-        <path d="M92 330C170 348 225 294 276 242" stroke="#60A5FA" strokeOpacity=".38" strokeWidth="1.5" />
-        <path d="M508 334C431 351 380 295 330 242" stroke="#60A5FA" strokeOpacity=".38" strokeWidth="1.5" />
+
+        {/* Main orbital rings */}
+        <circle
+          cx="300"
+          cy="230"
+          r="198"
+          stroke="url(#aml-ring)"
+          strokeOpacity=".4"
+        />
+
+        <circle
+          cx="300"
+          cy="230"
+          r="150"
+          stroke="#93C5FD"
+          strokeOpacity=".2"
+          strokeDasharray="4 9"
+        />
+
+        <circle
+          cx="300"
+          cy="230"
+          r="116"
+          fill="url(#aml-core)"
+        />
+
+        {/* Inner monitoring orbit */}
+        <circle
+          cx="300"
+          cy="230"
+          r="91"
+          stroke="#60A5FA"
+          strokeOpacity=".12"
+          strokeDasharray="3 8"
+        />
+
+        {/* Connected capability pathways */}
+        <path
+          d="M102 130C172 102 217 145 275 206"
+          stroke="url(#aml-line)"
+          strokeOpacity=".65"
+          strokeWidth="1.5"
+        />
+
+        <path
+          d="M498 116C426 107 384 151 329 206"
+          stroke="url(#aml-line)"
+          strokeOpacity=".65"
+          strokeWidth="1.5"
+        />
+
+        <path
+          d="M92 330C170 348 225 294 276 250"
+          stroke="url(#aml-line)"
+          strokeOpacity=".55"
+          strokeWidth="1.5"
+        />
+
+        <path
+          d="M508 334C431 351 380 295 330 250"
+          stroke="url(#aml-line)"
+          strokeOpacity=".55"
+          strokeWidth="1.5"
+        />
+
+        {/* Top and bottom connections */}
+        <path
+          d="M300 32V110"
+          stroke="#60A5FA"
+          strokeOpacity=".35"
+          strokeDasharray="4 6"
+        />
+
+        <path
+          d="M300 350V428"
+          stroke="#60A5FA"
+          strokeOpacity=".35"
+          strokeDasharray="4 6"
+        />
+
+        {/* Orbital nodes */}
         {[
           [102, 130],
           [498, 116],
           [92, 330],
           [508, 334],
-          [300, 22],
-          [300, 418],
+          [300, 32],
+          [300, 428],
         ].map(([cx, cy]) => (
           <g key={`${cx}-${cy}`}>
-            <circle cx={cx} cy={cy} r="7" fill="#0A1D3B" stroke="#7DD3FC" strokeOpacity=".75" />
-            <circle cx={cx} cy={cy} r="2.5" fill="#93C5FD" />
+            <circle
+              cx={cx}
+              cy={cy}
+              r="7"
+              fill="#0A1D3B"
+              stroke="#7DD3FC"
+              strokeOpacity=".85"
+            />
+            <circle
+              cx={cx}
+              cy={cy}
+              r="2.5"
+              fill="#93C5FD"
+            />
           </g>
         ))}
       </svg>
 
-      <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-blue-200/25 bg-navy-950/80 shadow-[0_0_70px_rgba(40,120,237,.32)] backdrop-blur-xl">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500 text-white shadow-lg shadow-blue-500/25">
+      {/* Central AML365 identity */}
+      <div className="absolute left-1/2 top-1/2 z-10 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-blue-200/25 bg-navy-950/90 shadow-[0_0_75px_rgba(40,120,237,.38)] backdrop-blur-xl">
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500 text-white shadow-lg shadow-blue-500/30">
           <ShieldCheck size={30} aria-hidden="true" />
         </div>
-        <p className="mt-3 text-lg font-semibold">AML365</p>
-        <p className="text-xs text-blue-200/65">Connected controls</p>
+
+        <p className="mt-3 text-lg font-bold tracking-tight text-white">
+          AML365
+        </p>
+
+        <p className="text-[11px] text-blue-200/75">
+          Financial Crime Compliance
+        </p>
+
+        <div className="mt-2 h-1 w-9 rounded-full bg-blue-400" />
       </div>
 
-      <div className="aml-visual-label left-2 top-[4.4rem]">
-        <LockKeyhole size={17} />
-        <span>Screening</span>
-      </div>
-      <div className="aml-visual-label right-0 top-14">
-        <Gauge size={17} />
-        <span>Customer risk</span>
-      </div>
-      <div className="aml-visual-label bottom-14 left-0">
-        <CircleDot size={17} />
-        <span>Monitoring</span>
-      </div>
-      <div className="aml-visual-label bottom-14 right-0">
-        <FileText size={17} />
-        <span>Reporting</span>
-      </div>
+      {/* AML365 orbital capabilities */}
+      {controls.map(({ position, icon: Icon, label }) => (
+        <div
+          key={label}
+          className={`aml-visual-label absolute z-20 ${position}`}
+        >
+          <Icon size={16} aria-hidden="true" />
+          <span>{label}</span>
+        </div>
+      ))}
     </div>
   );
 }
+
 
 function Overview() {
   const blocks = [

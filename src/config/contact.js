@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = "rahim3706@gmail.com";
+export const CONTACT_EMAIL = "shafiqul.islam@datasoft-bd.com";
 
 export function createEnquiryMailto(form) {
   const subject = encodeURIComponent(`AML365 enquiry from ${form.institution}`);
