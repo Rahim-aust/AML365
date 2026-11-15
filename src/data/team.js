@@ -14,22 +14,29 @@ export const leadership = [
     email: "kabita.roy@datasoft-bd.com",
     image: "/teams/Kabita_Rani_Roy.jpg",
   },
-];
-
-export const teamGroups = [
   {
-    id: "business-development",
-    title: "Business Development",
-    members: [
-      {
         name: "Md. Shofiqul Islam",
         title: "Head of Business Development",
         phone: "01711507013",
         email: "shafiqul.islam@datasoft-bd.com",
         image: "/teams/Md_Shofiqul_Islam.jpg",
-      },
-    ],
   },
+];
+
+export const teamGroups = [
+  // {
+  //   id: "business-development",
+  //   title: "Business Development",
+  //   members: [
+  //     {
+  //       name: "Md. Shofiqul Islam",
+  //       title: "Head of Business Development",
+  //       phone: "01711507013",
+  //       email: "shafiqul.islam@datasoft-bd.com",
+  //       image: "/teams/Md_Shofiqul_Islam.jpg",
+  //     },
+  //   ],
+  // },
   {
     id: "development-engineering",
     title: "Development & Engineering",
@@ -61,7 +68,7 @@ export const teamGroups = [
     title: "Implementation",
     members: [
       {
-        name: "King Kobir",
+        name: "Md. Rezaul Kobir",
         title: "Assistant Manager (Implementation)",
         image: "/teams/King_Kobir.jpg",
       },
